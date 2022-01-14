@@ -1,7 +1,8 @@
-package com.example.strongerfootballapp
+package com.example.strongerfootballapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.strongerfootballapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
