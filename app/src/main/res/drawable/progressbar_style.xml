@@ -5,10 +5,10 @@
             <corners android:radius="30dp" />
             <gradient
                 android:angle="270"
-                android:centerColor="#ff7a7d"
+                android:centerColor="@color/progressbar_first_color"
                 android:centerY="0.75"
-                android:endColor="#ff7a7d"
-                android:startColor="#ff7a7d" />
+                android:endColor="@color/progressbar_first_color"
+                android:startColor="@color/progressbar_first_color" />
         </shape>
     </item>
 
@@ -18,10 +18,10 @@
                 <corners android:radius="30dp" />
                 <gradient
                     android:angle="270"
-                    android:centerColor="#0074ef"
+                    android:centerColor="@color/progressbar_second_color"
                     android:centerY="0.75"
-                    android:endColor="#0074ef"
-                    android:startColor="#0074ef" />
+                    android:endColor="@color/progressbar_second_color"
+                    android:startColor="@color/progressbar_second_color" />
             </shape>
         </clip>
     </item>
@@ -31,8 +31,8 @@
                 <corners android:radius="30dp" />
                 <gradient
                     android:angle="270"
-                    android:endColor="#0074ef"
-                    android:startColor="#0074ef" />
+                    android:endColor="@color/progressbar_second_color"
+                    android:startColor="@color/progressbar_second_color" />
             </shape>
         </clip>
     </item>
