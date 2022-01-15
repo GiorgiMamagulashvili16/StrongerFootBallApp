@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="133dp"
             android:layout_gravity="center_horizontal"
-            android:text="Statistics"
+            android:text="@string/statistics"
             android:gravity="center"
             android:textColor="#8F000000"
             android:textSize="12sp" />
@@ -118,7 +118,7 @@
             android:layout_marginTop="133dp"
             android:layout_marginStart="47dp"
             android:layout_marginEnd="240dp"
-            android:text="OverView"
+            android:text="@string/overview"
             android:textColor="#00aa7b"
             android:textSize="12sp"/>
 
@@ -130,7 +130,7 @@
             android:layout_marginTop="133dp"
             android:layout_marginEnd="47dp"
             android:textColor="#8F000000"
-            android:text="line up"
+            android:text="@string/line_up"
             android:textSize="12sp"
             />
 
@@ -149,7 +149,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="217dp"
             android:layout_marginEnd="289dp"
-            android:text="1st half"
+            android:text="@string/_1st_half"
             android:textColor="#b0b0b0"
             android:textSize="9sp"/>
 
@@ -170,7 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="169dp"
-            android:text="Ball Possession"
+            android:text="@string/ball_possession"
             android:maxLines="1"
             android:textColor="#b0b0b0"
             android:textSize="12sp"/>
@@ -226,7 +226,7 @@
         android:layout_height="24dp"
         android:layout_marginTop="31dp"
         android:gravity="center_horizontal"
-        android:text="Match Preview"
+        android:text="@string/match_preview"
         android:textColor="@color/white"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -238,7 +238,7 @@
         android:layout_width="82dp"
         android:layout_height="16dp"
         android:gravity="center_horizontal"
-        android:text="Game week 3"
+        android:text="@string/game_week_3"
         android:textColor="#77FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
