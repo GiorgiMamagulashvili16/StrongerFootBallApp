@@ -1,13 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.match_screen.MatchFragment">
 
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/overViewCardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginBottom="75dp"
+        android:paddingHorizontal="17dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/eventDateAndStadiumName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#00aa7b"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            tools:text="2 September 2018 Camp Nou Stadium"/>
+
+        <TextView
+            android:id="@+id/matchScoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="51dp"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="normal"
+            tools:text="5 : 2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/teamOneLogoImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="47dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/teamTwoLogoImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="53dp" />
+
+        <TextView
+            android:id="@+id/teamOneNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="93dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            tools:text="TeamOne" />
+
+        <TextView
+            android:id="@+id/teamIndicatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="12sp"
+            tools:text="time" />
+
+        <TextView
+            android:id="@+id/teamTwoNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="93dp"
+            android:layout_marginEnd="44dp"
+            android:textSize="12sp"
+            tools:text="TeamTwo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matchEventsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="234dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/overViewOptionsBackground"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="123dp"
+            android:src="@drawable/small_screen"/>
+
+        <TextView
+            android:id="@+id/statisticsOptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="133dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Statistics"
+            android:gravity="center"
+            android:textColor="#8F000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/overViewOptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="133dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginEnd="240dp"
+            android:text="OverView"
+            android:textColor="#00aa7b"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/lineupOptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="133dp"
+            android:layout_marginEnd="47dp"
+            android:textColor="#8F000000"
+            android:text="line up"
+            android:textSize="12sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/statisticsBackground"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginTop="214dp"
+            android:src="@drawable/halfs"
+            />
+
+        <TextView
+            android:id="@+id/halfIndicatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="217dp"
+            android:layout_marginEnd="289dp"
+            android:text="1st half"
+            android:textColor="#b0b0b0"
+            android:textSize="9sp"/>
+
+        <TextView
+            android:id="@+id/scoreIndicatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="21dp"
+            android:layout_marginTop="217dp"
+            android:textColor="#b0b0b0"
+            android:textSize="9sp"
+            tools:text="5:2"/>
+
+        <TextView
+            android:id="@+id/ballPossessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="169dp"
+            android:text="Ball Possession"
+            android:maxLines="1"
+            android:textColor="#b0b0b0"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/firstTeamBallPossessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="169dp"
+            android:textColor="#b0b0b0"
+            android:textSize="12sp"
+            tools:text="70%"/>
+
+        <TextView
+            android:id="@+id/secondTeamBallPossessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="169dp"
+            android:layout_marginEnd="14dp"
+            android:textColor="#b0b0b0"
+            android:textSize="12sp"
+            tools:text="30%"/>
+
+        <ProgressBar
+            android:id="@+id/ballPossessionProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="195dp"
+            android:foregroundGravity="top"
+            android:progressDrawable="@drawable/progressbar_style"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/matchPreviewTextView"
+        android:layout_width="141dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="31dp"
+        android:gravity="center_horizontal"
+        android:text="Match Preview"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/gameWeekTextView"
+        android:layout_width="82dp"
+        android:layout_height="16dp"
+        android:gravity="center_horizontal"
+        android:text="Game week 3"
+        android:textColor="#77FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchPreviewTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/notificationsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/notifications_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backArrowImageView"
+        android:layout_width="31dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
