@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ball_icon" android:title="Matches"/>
+    <item android:icon="@drawable/profile_icon" android:title="Top Players"/>
+    <item android:icon="@drawable/video_icon" android:title="Videos"/>
+    <item android:icon="@drawable/star_icon" android:title="Favorites"/>
+    <item android:icon="@drawable/settings_icon" android:title="Settings"/>
+</menu>
