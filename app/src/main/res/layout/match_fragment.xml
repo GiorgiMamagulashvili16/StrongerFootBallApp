@@ -24,6 +24,7 @@
             android:id="@+id/eventDateAndStadiumName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/app_main_color"
             android:textSize="@dimen/dimens_sp_12"
@@ -68,7 +69,7 @@
             tools:text="TeamOne" />
 
         <TextView
-            android:id="@+id/teamIndicatorTextView"
+            android:id="@+id/timeIndicatorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimens_dp_84"

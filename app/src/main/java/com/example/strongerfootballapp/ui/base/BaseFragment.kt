@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import com.example.strongerfootballapp.utils.extensions.launchLifeCycleScope
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.component.KoinScopeComponent
 import org.koin.core.component.createScope
@@ -40,11 +41,15 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment(), Koin
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onBindViewModel(viewModel)
+        launchLifeCycleScope {
+            observeStates(viewModel)
+        }
     }
 
 
     abstract fun inflateFragment(): Inflate<VB>
     abstract fun onBindViewModel(viewModel: VM)
+    open suspend fun observeStates(viewModel: VM) = Unit
 
     override val scope: Scope by lazy { createScope(this) }
 }
