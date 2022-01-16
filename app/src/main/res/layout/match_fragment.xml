@@ -1,13 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.match_screen.MatchFragment">
 
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/overViewCardView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_marginHorizontal="@dimen/dimens_dp_17"
+        android:layout_marginTop="@dimen/dimens_dp_86"
+        android:layout_marginBottom="@dimen/dimens_dp_75"
+        android:paddingHorizontal="@dimen/dimens_dp_17"
+        app:cardCornerRadius="@dimen/dimens_dp_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/eventDateAndStadiumName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/app_main_color"
+            android:textSize="@dimen/dimens_sp_12"
+            android:textStyle="normal"
+            tools:text="2 September 2018 Camp Nou Stadium"/>
+
+        <TextView
+            android:id="@+id/matchScoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="51dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimens_sp_25"
+            android:textStyle="normal"
+            tools:text="5 : 2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/teamOneLogoImageView"
+            android:layout_width="@dimen/dimens_dp_45"
+            android:layout_height="@dimen/dimens_dp_40"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/dimens_dp_53"
+            android:layout_marginTop="@dimen/dimens_dp_47" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/teamTwoLogoImageView"
+            android:layout_width="@dimen/dimens_dp_40"
+            android:layout_height="@dimen/dimens_dp_40"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dimens_dp_47"
+            android:layout_marginEnd="@dimen/dimens_dp_53" />
+
+        <TextView
+            android:id="@+id/teamOneNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_dp_47"
+            android:layout_marginTop="@dimen/dimens_dp_93"
+            android:gravity="center"
+            android:textSize="@dimen/dimens_dp_12"
+            tools:text="TeamOne" />
+
+        <TextView
+            android:id="@+id/teamIndicatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_dp_84"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/dimens_sp_12"
+            tools:text="time" />
+
+        <TextView
+            android:id="@+id/teamTwoNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dimens_dp_93"
+            android:layout_marginEnd="@dimen/dimens_dp_44"
+            android:textSize="@dimen/dimens_sp_12"
+            tools:text="TeamTwo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matchEventsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dimens_dp_234" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/overViewOptionsBackground"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_dp_35"
+            android:layout_marginHorizontal="@dimen/dimens_dp_18"
+            android:layout_marginTop="@dimen/dimens_dp_123"
+            android:src="@drawable/small_screen"/>
+
+        <TextView
+            android:id="@+id/statisticsOptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_dp_133"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/statistics"
+            android:gravity="center"
+            android:textColor="@color/options_textview_color"
+            android:textSize="@dimen/dimens_sp_12" />
+
+        <TextView
+            android:id="@+id/overViewOptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_dp_133"
+            android:layout_marginStart="@dimen/dimens_dp_47"
+            android:layout_marginEnd="@dimen/dimens_dp_240"
+            android:text="@string/overview"
+            android:textColor="@color/app_main_color"
+            android:textSize="@dimen/dimens_sp_12"/>
+
+        <TextView
+            android:id="@+id/lineupOptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_dp_133"
+            android:layout_marginEnd="@dimen/dimens_dp_47"
+            android:textColor="@color/options_textview_color"
+            android:text="@string/line_up"
+            android:textSize="@dimen/dimens_sp_12"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/statisticsBackground"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_dp_18"
+            android:layout_marginTop="@dimen/dimens_dp_214"
+            android:src="@drawable/halfs"
+            />
+
+        <TextView
+            android:id="@+id/halfIndicatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_dp_18"
+            android:layout_marginTop="@dimen/dimens_dp_217"
+            android:layout_marginEnd="@dimen/dimens_dp_289"
+            android:text="@string/_1st_half"
+            android:textColor="@color/indicator_color"
+            android:textSize="@dimen/dimens_sp_9"
+            />
+
+        <TextView
+            android:id="@+id/scoreIndicatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/dimens_dp_21"
+            android:layout_marginTop="@dimen/dimens_dp_217"
+            android:textColor="@color/indicator_color"
+            android:textSize="@dimen/dimens_sp_9"
+            tools:text="5:2"/>
+
+        <TextView
+            android:id="@+id/ballPossessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimens_dp_169"
+            android:text="@string/ball_possession"
+            android:maxLines="1"
+            android:textColor="@color/indicator_color"
+            android:textSize="@dimen/dimens_sp_12"/>
+
+        <TextView
+            android:id="@+id/firstTeamBallPossessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_dp_14"
+            android:layout_marginTop="@dimen/dimens_dp_169"
+            android:textColor="@color/indicator_color"
+            android:textSize="@dimen/dimens_sp_12"
+            tools:text="70%"/>
+
+        <TextView
+            android:id="@+id/secondTeamBallPossessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dimens_dp_169"
+            android:layout_marginEnd="@dimen/dimens_dp_14"
+            android:textColor="@color/indicator_color"
+            android:textSize="@dimen/dimens_sp_12"
+            tools:text="30%"/>
+
+        <ProgressBar
+            android:id="@+id/ballPossessionProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_dp_5"
+            android:layout_marginHorizontal="@dimen/dimens_dp_35"
+            android:layout_marginTop="@dimen/dimens_dp_195"
+            android:foregroundGravity="top"
+            android:progressDrawable="@drawable/progressbar_style"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimens_dp_200"
+        android:src="@drawable/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/matchPreviewTextView"
+        android:layout_width="@dimen/dimens_dp_141"
+        android:layout_height="@dimen/dimens_dp_24"
+        android:layout_marginTop="@dimen/dimens_dp_31"
+        android:gravity="center_horizontal"
+        android:text="@string/match_preview"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimens_sp_17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/gameWeekTextView"
+        android:layout_width="@dimen/dimens_dp_82"
+        android:layout_height="@dimen/dimens_dp_16"
+        android:gravity="center_horizontal"
+        android:text="@string/game_week_3"
+        android:textColor="@color/match_preview_textview_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/matchPreviewTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/notificationsImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimens_dp_25"
+        android:layout_marginEnd="@dimen/dimens_dp_15"
+        android:src="@drawable/notifications_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backArrowImageView"
+        android:layout_width="@dimen/dimens_dp_31"
+        android:layout_height="@dimen/dimens_dp_25"
+        android:layout_marginTop="@dimen/dimens_dp_25"
+        android:layout_marginStart="@dimen/dimens_dp_15"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        android:elevation="@dimen/dimens_dp_15"
+        android:background="@color/app_main_color"
+        android:paddingTop="@dimen/dimens_dp_5"
+        app:menu="@menu/bottom_nav"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

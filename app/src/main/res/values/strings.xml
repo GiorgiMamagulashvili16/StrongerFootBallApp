@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">StrongerFootBallApp</string>
+    <string name="statistics">Statistics</string>
+    <string name="overview">OverView</string>
+    <string name="line_up">line up</string>
+    <string name="_1st_half">1st half</string>
+    <string name="ball_possession">Ball Possession</string>
+    <string name="match_preview">Match Preview</string>
+    <string name="game_week_3">Game week 3</string>
+    <string name="matches">Matches</string>
+    <string name="top_players">Top Players</string>
+    <string name="videos">Videos</string>
+    <string name="favorites">Favorites</string>
+    <string name="settings">Settings</string>
 </resources>
