@@ -14,12 +14,12 @@ class FootballRepositoryImpl(private val matchApi: ApiService) :
             val response = matchApi.getMatchPreview()
             if (response.isSuccessful) {
                 val matchResponse = response.body()!!
-                Response.success(matchResponse)
+                Response.Success(matchResponse)
             } else {
-                Response.error(response.message())
+                Response.Error(response.message())
             }
         } catch (e: Exception) {
-            Response.error(e.message!!)
+            Response.Error(e.message)
         }
     }
 }
