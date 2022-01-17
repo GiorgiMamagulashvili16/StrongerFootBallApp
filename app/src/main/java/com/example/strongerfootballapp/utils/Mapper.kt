@@ -1,5 +1,6 @@
 package com.example.strongerfootballapp.utils
 
+import com.example.strongerfootballapp.model.ActionTypes
 import com.example.strongerfootballapp.model.Score
 import com.example.strongerfootballapp.model.Summary
 import com.example.strongerfootballapp.model.TeamAction
@@ -23,15 +24,28 @@ object Mapper {
 
     private fun countScore(actions: List<TeamAction>?, goalAction: () -> Unit, ownGoalAction: () -> Unit){
         actions?.forEach { teamAction ->
-            if (teamAction.actionType == GOAL_ACTION_CODE
-                && teamAction.action.goalType != OWN_GOAL_CODE) goalAction()
-            else if (teamAction.actionType == GOAL_ACTION_CODE
-                && teamAction.action.goalType == OWN_GOAL_CODE) ownGoalAction()
+            if (teamAction.actionType == GOAL_TYPE
+                && teamAction.action.goalType != OWN_GOAL_TYPE) goalAction()
+            else if (teamAction.actionType == GOAL_TYPE
+                && teamAction.action.goalType == OWN_GOAL_TYPE) ownGoalAction()
         }
     }
 
-    private const val OWN_GOAL_CODE = 2
-    private const val GOAL_ACTION_CODE = 1
+    fun mapIntToActionType(value: Int, goalType: Int?): ActionTypes?{
+        return when (value){
+            GOAL_TYPE -> if (goalType == OWN_GOAL_TYPE) ActionTypes.OWN_GOAL else ActionTypes.GOAL
+            YELLOW_CARD_TYPE -> ActionTypes.YELLOW_CARD
+            RED_CARD_TYPE -> ActionTypes.RED_CARD
+            SUBSTITUTION_TYPE -> ActionTypes.SUBSTITUTION
+            else -> null
+        }
+    }
+
+    private const val GOAL_TYPE = 1
+    private const val OWN_GOAL_TYPE = 2
+    private const val YELLOW_CARD_TYPE = 2
+    private const val RED_CARD_TYPE = 3
+    private const val SUBSTITUTION_TYPE = 4
     private const val FIRST_HALF = 1
     private const val HALVES_DIVIDER_TIME = 45
 

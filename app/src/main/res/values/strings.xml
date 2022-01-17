@@ -15,4 +15,9 @@
     <string name="date_and_stadium_name">%s %s</string>
     <string name="time">%f\'</string>
     <string name="percent">%d%%</string>
+    <string name="goals_by">Goals by</string>
+    <string name="own_goal">Own Goal</string>
+    <string name="tripping">Tripping</string>
+    <string name="substitution">Substitution</string>
+    <string name="action_text">%s\' %s</string>
 </resources>

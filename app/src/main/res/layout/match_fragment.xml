@@ -91,6 +91,7 @@
             android:id="@+id/matchEventsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_marginTop="@dimen/dimens_dp_234" />
 
         <androidx.appcompat.widget.AppCompatImageView
