@@ -31,8 +31,8 @@ object Mapper {
         }
     }
 
-    fun mapIntToActionType(value: Int, goalType: Int?): ActionTypes? =
-        ActionTypes.values().find { it.actionId == value && it.goalType == goalType }
+    fun mapIntToActionType(actionId: Int, goalType: Int?): ActionTypes? =
+        ActionTypes.values().find { it.actionId == actionId && it.goalType == goalType }
 
     private const val FIRST_HALF = 1
     private const val HALVES_DIVIDER_TIME = 45
