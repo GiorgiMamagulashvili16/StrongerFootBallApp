@@ -20,4 +20,5 @@
     <string name="tripping">Tripping</string>
     <string name="substitution">Substitution</string>
     <string name="action_text">%s\' %s</string>
+    <string name="half_number">%s Half</string>
 </resources>

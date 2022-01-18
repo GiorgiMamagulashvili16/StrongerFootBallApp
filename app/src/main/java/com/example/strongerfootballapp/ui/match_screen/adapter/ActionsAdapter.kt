@@ -18,19 +18,23 @@ class ActionsAdapter(private val helper: ActionAdapterHelper)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.onBind(currentList[position], helper)
+        holder.onBind(currentList, helper)
 
 
     class ViewHolder(private val binding: TeamActionsContainerBinding): RecyclerView.ViewHolder(binding.root){
 
-        fun onBind(summary: Summary, helper: ActionAdapterHelper){
-            helper.createActionView(binding.root.context, summary.actionTime, summary.team1Action, false){
+        fun onBind(summaries: MutableList<Summary>, helper: ActionAdapterHelper){
+            val current = summaries[adapterPosition]
+
+            helper.createActionView(binding.root.context, current.actionTime, current.team1Action, false){
                 binding.firstTeamLinearLayout.addView(it)
             }
 
-            helper.createActionView(binding.root.context, summary.actionTime, summary.team2Action, true){
+            helper.createActionView(binding.root.context, current.actionTime, current.team2Action, true){
                 binding.secondTeamLinearLayout.addView(it)
             }
+
+            helper.showHalfScoreView(current.actionTime, binding.halfScoreView, summaries)
         }
     }
 }
