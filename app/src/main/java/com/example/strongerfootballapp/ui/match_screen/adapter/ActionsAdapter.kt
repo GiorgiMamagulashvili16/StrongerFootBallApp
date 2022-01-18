@@ -26,11 +26,11 @@ class ActionsAdapter(private val helper: ActionAdapterHelper)
         fun onBind(summaries: MutableList<Summary>, helper: ActionAdapterHelper){
             val current = summaries[adapterPosition]
 
-            helper.createActionView(binding.root.context, current.actionTime, current.team1Action, false){
+            helper.createActionView(binding.root.context, current.actionTime, current.team1Action){
                 binding.firstTeamLinearLayout.addView(it)
             }
 
-            helper.createActionView(binding.root.context, current.actionTime, current.team2Action, true){
+            helper.createActionView(binding.root.context, current.actionTime, current.team2Action){
                 binding.secondTeamLinearLayout.addView(it)
             }
 

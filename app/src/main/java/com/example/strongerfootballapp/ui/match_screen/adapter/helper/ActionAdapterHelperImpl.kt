@@ -3,6 +3,7 @@ package com.example.strongerfootballapp.ui.match_screen.adapter.helper
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isGone
+import com.example.strongerfootballapp.model.ActionTypes
 import com.example.strongerfootballapp.model.Summary
 import com.example.strongerfootballapp.ui.views.RegularTeamActionView
 import com.example.strongerfootballapp.model.TeamAction
@@ -19,14 +20,13 @@ class ActionAdapterHelperImpl: ActionAdapterHelper {
         context: Context,
         actionTime: String,
         teamActions: List<TeamAction>?,
-        doRotate: Boolean,
         action: (ConstraintLayout) -> Unit
     ) {
         teamActions?.forEach {
-            val actionView = if (it.actionType == SUBSTITUTION_ACTION_TYPE)
-                SubstitutionTeamActionView(context, actionTime, it.action.player1, it.action.player2, doRotate)
+            val actionView = if (it.actionType == ActionTypes.SUBSTITUTION.actionId)
+                SubstitutionTeamActionView(context, actionTime, it.action.player1, it.action.player2, it.teamType)
             else
-                RegularTeamActionView(context, it.actionType, actionTime, it.action.goalType, it.action.player, doRotate)
+                RegularTeamActionView(context, it.actionType, actionTime, it.action.goalType, it.action.player, it.teamType)
             action(actionView)
         }
     }
@@ -49,7 +49,6 @@ class ActionAdapterHelperImpl: ActionAdapterHelper {
     companion object{
         private const val FIRST_HALF = 1
         private const val SECOND_HALF = 2
-        private const val SUBSTITUTION_ACTION_TYPE = 4
         private const val HALF_DIVIDER_TIME = 45
     }
 

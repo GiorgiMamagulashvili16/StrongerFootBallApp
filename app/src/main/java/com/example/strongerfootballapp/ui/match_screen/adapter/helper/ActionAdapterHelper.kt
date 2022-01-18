@@ -13,7 +13,6 @@ interface ActionAdapterHelper {
         context: Context,
         actionTime: String,
         teamActions: List<TeamAction>?,
-        doRotate: Boolean,
         action: (ConstraintLayout) -> Unit
     )
 

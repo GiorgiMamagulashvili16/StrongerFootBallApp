@@ -17,31 +17,34 @@ class SubstitutionTeamActionView(
     actionTime: String,
     player1: Player?,
     player2: Player?,
-    rotate: Boolean = false
+    teamType: Int
 ) : ConstraintLayout(context) {
     private val binding: SubstitutionActionBinding =
         SubstitutionActionBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
         with(binding) {
-            firstTeamActionText.text =
+            actionTextTextView.text =
                 context.getString(R.string.action_text)
                     .format(actionTime, ActionTypes.SUBSTITUTION.actionImageRes)
             firstPlayerImage.loadImage(player1?.playerImage)
             secondPlayerImage.loadImage(player2?.playerImage)
-            firstTeamPlayerName.text = player1?.playerName?.shortenLastName()
-            firstTeamSubstitutedPlayerName.text = player2?.playerName?.shortenLastName()
-            firstTeamActionIcon.setImageResource(ActionTypes.SUBSTITUTION.actionImageRes)
+            playerNameTextView.text = player1?.playerName?.shortenLastName()
+            substitutedPlayerNameTextView.text = player2?.playerName?.shortenLastName()
+            actionIconImageView.setImageResource(ActionTypes.SUBSTITUTION.actionImageRes)
         }
-        if (rotate) rotateView()
+        if (teamType == SECOND_TEAM) rotateView()
     }
 
     private fun rotateView() {
         with(binding) {
-            root.scaleX = -1f
-            firstTeamActionText.scaleX = -1f
-            firstTeamSubstitutedPlayerName.scaleX = -1f
-            firstTeamPlayerName.scaleX = -1f
+            root.scaleX = REVERSED_SCALE
+            textGroup.scaleX = REVERSED_SCALE
         }
+    }
+
+    companion object{
+        private const val REVERSED_SCALE = -1f
+        private const val SECOND_TEAM = 2
     }
 }

@@ -17,7 +17,7 @@ class RegularTeamActionView(
     actionTime: String,
     goalType: Int?,
     player: Player?,
-    rotate: Boolean = false
+    teamType: Int
 ) : ConstraintLayout(context) {
     private val binding = RegularActionBinding.inflate(LayoutInflater.from(context), this, true)
 
@@ -27,25 +27,25 @@ class RegularTeamActionView(
         with(binding){
             mActionType?.let {
                 val actionText = context.getString(it.actionTextRes)
-                firstTeamActionText.text = context.getString(R.string.action_text).format(actionTime, actionText)
-                firstTeamPlayerName.text = player?.playerName?.shortenLastName()
-                firstTeamFirstPlayerImage.setImageResource(R.mipmap.ic_launcher)
-                firstTeamActionIcon.setImageResource(it.actionImageRes)
+                actionTextTextView.text = context.getString(R.string.action_text).format(actionTime, actionText)
+                playerNameTextView.text = player?.playerName?.shortenLastName()
+                playerImage.setImageResource(R.mipmap.ic_launcher)
+                actionIconImageView.setImageResource(it.actionImageRes)
             }
         }
-        if (rotate) rotateView()
+        if (teamType == SECOND_TEAM) rotateView()
     }
 
     private fun rotateView(){
         with(binding){
-            root.scaleX = -1f
-            firstTeamActionText.scaleX = REVERSED_SCALE
-            firstTeamPlayerName.scaleX = REVERSED_SCALE
+            root.scaleX = REVERSED_SCALE
+            textGroup.scaleX = REVERSED_SCALE
         }
     }
 
     companion object{
         private const val REVERSED_SCALE = -1f
+        private const val SECOND_TEAM = 2
     }
 
 }
