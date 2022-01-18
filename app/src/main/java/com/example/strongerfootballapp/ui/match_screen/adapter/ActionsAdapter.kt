@@ -10,7 +10,7 @@ import com.example.strongerfootballapp.ui.match_screen.adapter.helper.ActionAdap
 import com.example.strongerfootballapp.utils.ItemDiffUtil
 
 class ActionsAdapter(private val helper: ActionAdapterHelper)
-    : ListAdapter<Summary, ViewHolder>(ItemDiffUtil<Summary>()) {
+    : ListAdapter<Summary, ActionsAdapter.ViewHolder>(ItemDiffUtil<Summary>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = TeamActionsContainerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,19 +19,18 @@ class ActionsAdapter(private val helper: ActionAdapterHelper)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.onBind(currentList[position], helper)
-}
 
 
-class ViewHolder(private val binding: TeamActionsContainerBinding): RecyclerView.ViewHolder(binding.root){
+    class ViewHolder(private val binding: TeamActionsContainerBinding): RecyclerView.ViewHolder(binding.root){
 
-    fun onBind(summary: Summary, helper: ActionAdapterHelper){
-        helper.createActionView(binding.root.context, summary.actionTime, summary.team1Action, false){
-            binding.firstTeamLinearLayout.addView(it)
-        }
+        fun onBind(summary: Summary, helper: ActionAdapterHelper){
+            helper.createActionView(binding.root.context, summary.actionTime, summary.team1Action, false){
+                binding.firstTeamLinearLayout.addView(it)
+            }
 
-        helper.createActionView(binding.root.context, summary.actionTime, summary.team2Action, true){
-            binding.secondTeamLinearLayout.addView(it)
+            helper.createActionView(binding.root.context, summary.actionTime, summary.team2Action, true){
+                binding.secondTeamLinearLayout.addView(it)
+            }
         }
     }
-
 }

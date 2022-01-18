@@ -1,4 +1,4 @@
-package com.example.footballapp.ui.views
+package com.example.strongerfootballapp.ui.views
 
 import android.annotation.SuppressLint
 import android.content.Context

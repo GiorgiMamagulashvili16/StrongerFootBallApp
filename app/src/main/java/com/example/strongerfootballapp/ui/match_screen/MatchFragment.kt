@@ -1,6 +1,6 @@
 package com.example.strongerfootballapp.ui.match_screen
 
-import com.example.footballapp.ui.details_screen.adapter.helper.ActionAdapterHelperImpl
+import com.example.strongerfootballapp.ui.match_screen.adapter.helper.ActionAdapterHelperImpl
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.model.Match

@@ -11,7 +11,7 @@ object Mapper {
         val score = Score()
         summaries.forEach {
             val isHalfTimeCorrect = when(half){
-                FIRST_HALF -> it.actionTime.toInt() < HALVES_DIVIDER_TIME
+                FIRST_HALF -> it.actionTime.toInt() <= HALVES_DIVIDER_TIME
                 else -> it.actionTime.toInt() > HALVES_DIVIDER_TIME
             }
             if (isHalfTimeCorrect){
