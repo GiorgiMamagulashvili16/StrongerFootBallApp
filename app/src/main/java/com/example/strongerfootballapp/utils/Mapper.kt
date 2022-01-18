@@ -31,16 +31,8 @@ object Mapper {
         }
     }
 
-    fun mapIntToActionType(value: Int, goalType: Int?): ActionTypes?{
-        return when (value){
-            ActionTypes.GOAL.actionId ->
-                if (goalType == ActionTypes.OWN_GOAL.goalType) ActionTypes.OWN_GOAL else ActionTypes.GOAL
-            ActionTypes.YELLOW_CARD.actionId -> ActionTypes.YELLOW_CARD
-            ActionTypes.RED_CARD.actionId -> ActionTypes.RED_CARD
-            ActionTypes.SUBSTITUTION.actionId -> ActionTypes.SUBSTITUTION
-            else -> null
-        }
-    }
+    fun mapIntToActionType(value: Int, goalType: Int?): ActionTypes? =
+        ActionTypes.values().find { it.actionId == value && it.goalType == goalType }
 
     private const val FIRST_HALF = 1
     private const val HALVES_DIVIDER_TIME = 45
