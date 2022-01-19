@@ -1,6 +1,6 @@
 package com.example.strongerfootballapp.network
 
-import com.example.strongerfootballapp.model.Match
+import com.example.strongerfootballapp.domain.model.Match
 import retrofit2.Response
 import retrofit2.http.GET
 

@@ -1,7 +1,7 @@
-package com.example.strongerfootballapp.repository
+package com.example.strongerfootballapp.domain.repository
 
-import com.example.strongerfootballapp.model.Match
-import com.example.strongerfootballapp.network.ApiService
+import com.example.strongerfootballapp.domain.model.Match
+import com.example.strongerfootballapp.data.api.ApiService
 import com.example.strongerfootballapp.utils.Response
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

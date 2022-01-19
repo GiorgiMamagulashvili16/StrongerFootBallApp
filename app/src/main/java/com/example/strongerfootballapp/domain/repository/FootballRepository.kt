@@ -1,6 +1,6 @@
-package com.example.strongerfootballapp.repository
+package com.example.strongerfootballapp.data.repository
 
-import com.example.strongerfootballapp.model.Match
+import com.example.strongerfootballapp.domain.model.Match
 import com.example.strongerfootballapp.utils.Response
 
 

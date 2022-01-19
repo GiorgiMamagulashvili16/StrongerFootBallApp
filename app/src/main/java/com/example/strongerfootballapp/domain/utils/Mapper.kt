@@ -1,9 +1,9 @@
 package com.example.strongerfootballapp.utils
 
-import com.example.strongerfootballapp.model.ActionTypes
-import com.example.strongerfootballapp.model.Score
-import com.example.strongerfootballapp.model.Summary
-import com.example.strongerfootballapp.model.TeamAction
+import com.example.strongerfootballapp.domain.model.ActionTypes
+import com.example.strongerfootballapp.domain.model.Score
+import com.example.strongerfootballapp.domain.model.Summary
+import com.example.strongerfootballapp.domain.model.TeamAction
 
 object Mapper {
 
