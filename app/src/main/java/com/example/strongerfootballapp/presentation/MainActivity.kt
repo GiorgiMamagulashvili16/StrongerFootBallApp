@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.ui
+package com.example.strongerfootballapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

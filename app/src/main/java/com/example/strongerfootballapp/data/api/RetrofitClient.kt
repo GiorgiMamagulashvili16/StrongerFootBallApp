@@ -1,5 +1,6 @@
 package com.example.strongerfootballapp.network
 
+import com.example.strongerfootballapp.data.api.ApiService
 import com.example.strongerfootballapp.domain.interceptors.NetworkConnectionInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

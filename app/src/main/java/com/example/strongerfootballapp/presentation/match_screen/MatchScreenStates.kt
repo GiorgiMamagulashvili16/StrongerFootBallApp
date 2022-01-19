@@ -1,6 +1,6 @@
-package com.example.strongerfootballapp.ui.match_screen
+package com.example.strongerfootballapp.presentation.match_screen
 
-import com.example.strongerfootballapp.model.Match
+import com.example.strongerfootballapp.domain.model.Match
 
 sealed class MatchScreenStates{
     object Idle: MatchScreenStates()

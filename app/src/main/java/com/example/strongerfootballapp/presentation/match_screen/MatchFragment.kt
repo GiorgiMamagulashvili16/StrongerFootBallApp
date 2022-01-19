@@ -1,18 +1,17 @@
-package com.example.strongerfootballapp.ui.match_screen
+package com.example.strongerfootballapp.presentation.match_screen
 
-import com.example.strongerfootballapp.ui.match_screen.adapter.helper.ActionAdapterHelperImpl
 import com.example.strongerfootballapp.R
+import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelperImpl
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
-import com.example.strongerfootballapp.model.Match
-import com.example.strongerfootballapp.model.Score
-import com.example.strongerfootballapp.ui.base.BaseFragment
-import com.example.strongerfootballapp.ui.base.Inflate
-import com.example.strongerfootballapp.ui.match_screen.adapter.ActionsAdapter
-import com.example.strongerfootballapp.ui.match_screen.adapter.helper.ActionAdapterHelper
-import com.example.strongerfootballapp.utils.Mapper
-import com.example.strongerfootballapp.utils.extensions.loadImage
-import com.example.strongerfootballapp.utils.extensions.makeToast
-import com.example.strongerfootballapp.utils.extensions.toFormattedDate
+import com.example.strongerfootballapp.domain.model.Match
+import com.example.strongerfootballapp.domain.model.Score
+import com.example.strongerfootballapp.presentation.base.BaseFragment
+import com.example.strongerfootballapp.presentation.base.Inflate
+import com.example.strongerfootballapp.presentation.match_screen.adapter.ActionsAdapter
+import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelper
+import com.example.strongerfootballapp.domain.utils.extensions.loadImage
+import com.example.strongerfootballapp.domain.utils.extensions.makeToast
+import com.example.strongerfootballapp.domain.utils.extensions.toFormattedDate
 import kotlinx.coroutines.flow.collect
 import kotlin.reflect.KClass
 

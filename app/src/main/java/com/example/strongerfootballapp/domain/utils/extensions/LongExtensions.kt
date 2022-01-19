@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.utils.extensions
+package com.example.strongerfootballapp.domain.utils.extensions
 
 import java.text.SimpleDateFormat
 import java.util.*

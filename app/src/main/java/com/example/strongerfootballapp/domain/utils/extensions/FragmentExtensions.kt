@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.utils.extensions
+package com.example.strongerfootballapp.domain.utils.extensions
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment

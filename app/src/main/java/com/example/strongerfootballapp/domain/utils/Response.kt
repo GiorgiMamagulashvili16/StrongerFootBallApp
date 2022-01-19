@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.utils
+package com.example.strongerfootballapp.domain.utils
 
 sealed class Response<out T>{
 

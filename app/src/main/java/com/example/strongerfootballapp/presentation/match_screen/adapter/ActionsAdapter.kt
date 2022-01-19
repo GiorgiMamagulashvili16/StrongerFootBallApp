@@ -1,13 +1,13 @@
-package com.example.strongerfootballapp.ui.match_screen.adapter
+package com.example.strongerfootballapp.presentation.match_screen.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.strongerfootballapp.databinding.TeamActionsContainerBinding
-import com.example.strongerfootballapp.model.Summary
-import com.example.strongerfootballapp.ui.match_screen.adapter.helper.ActionAdapterHelper
-import com.example.strongerfootballapp.utils.ItemDiffUtil
+import com.example.strongerfootballapp.domain.model.Summary
+import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelper
+import com.example.strongerfootballapp.domain.utils.ItemDiffUtil
 
 class ActionsAdapter(private val helper: ActionAdapterHelper)
     : ListAdapter<Summary, ActionsAdapter.ViewHolder>(ItemDiffUtil<Summary>()) {

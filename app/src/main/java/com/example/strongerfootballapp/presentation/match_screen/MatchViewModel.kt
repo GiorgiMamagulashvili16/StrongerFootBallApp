@@ -1,9 +1,9 @@
-package com.example.strongerfootballapp.ui.match_screen
+package com.example.strongerfootballapp.presentation.match_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.strongerfootballapp.repository.FootballRepository
-import com.example.strongerfootballapp.utils.Response
+import com.example.strongerfootballapp.domain.repository.FootballRepository
+import com.example.strongerfootballapp.domain.utils.Response
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

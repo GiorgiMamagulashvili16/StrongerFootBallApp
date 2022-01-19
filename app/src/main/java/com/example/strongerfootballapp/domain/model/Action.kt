@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.model
+package com.example.strongerfootballapp.domain.model
 
 data class Action(
     val goalType: Int? = null,

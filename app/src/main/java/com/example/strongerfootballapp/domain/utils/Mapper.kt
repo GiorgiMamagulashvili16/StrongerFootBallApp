@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.utils
+package com.example.strongerfootballapp.domain.utils
 
 import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Score

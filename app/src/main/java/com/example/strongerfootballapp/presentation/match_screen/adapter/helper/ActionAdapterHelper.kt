@@ -1,10 +1,10 @@
-package com.example.strongerfootballapp.ui.match_screen.adapter.helper
+package com.example.strongerfootballapp.presentation.match_screen.adapter.helper
 
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.strongerfootballapp.model.Summary
-import com.example.strongerfootballapp.model.TeamAction
-import com.example.strongerfootballapp.ui.views.HalfScoreView
+import com.example.strongerfootballapp.domain.model.Summary
+import com.example.strongerfootballapp.domain.model.TeamAction
+import com.example.strongerfootballapp.presentation.views.HalfScoreView
 
 
 interface ActionAdapterHelper {

@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.utils.extensions
+package com.example.strongerfootballapp.domain.utils.extensions
 
 fun String.shortenLastName(): String{
     val spaceIndex = this.indexOf(" ")

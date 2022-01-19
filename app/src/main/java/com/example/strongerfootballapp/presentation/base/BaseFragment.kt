@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.ui.base
+package com.example.strongerfootballapp.presentation.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import com.example.strongerfootballapp.utils.extensions.launchLifeCycleScope
+import com.example.strongerfootballapp.domain.utils.extensions.launchLifeCycleScope
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 import org.koin.core.component.KoinScopeComponent
 import org.koin.core.component.createScope

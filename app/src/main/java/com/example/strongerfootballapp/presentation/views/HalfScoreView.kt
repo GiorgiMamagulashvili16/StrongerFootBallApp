@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.ui.views
+package com.example.strongerfootballapp.presentation.views
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.HalfScoreViewBinding
-import com.example.strongerfootballapp.model.Score
+import com.example.strongerfootballapp.domain.model.Score
 
 class HalfScoreView @JvmOverloads constructor(
     context: Context,

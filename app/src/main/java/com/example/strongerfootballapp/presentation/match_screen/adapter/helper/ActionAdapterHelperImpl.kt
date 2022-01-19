@@ -1,15 +1,15 @@
-package com.example.strongerfootballapp.ui.match_screen.adapter.helper
+package com.example.strongerfootballapp.presentation.match_screen.adapter.helper
 
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isGone
-import com.example.strongerfootballapp.model.ActionTypes
-import com.example.strongerfootballapp.model.Summary
-import com.example.strongerfootballapp.ui.views.RegularTeamActionView
-import com.example.strongerfootballapp.model.TeamAction
-import com.example.strongerfootballapp.ui.views.HalfScoreView
-import com.example.strongerfootballapp.ui.views.SubstitutionTeamActionView
-import com.example.strongerfootballapp.utils.Mapper
+import com.example.strongerfootballapp.domain.model.ActionTypes
+import com.example.strongerfootballapp.domain.model.Summary
+import com.example.strongerfootballapp.presentation.views.RegularTeamActionView
+import com.example.strongerfootballapp.domain.model.TeamAction
+import com.example.strongerfootballapp.presentation.views.HalfScoreView
+import com.example.strongerfootballapp.presentation.views.SubstitutionTeamActionView
+import com.example.strongerfootballapp.domain.utils.Mapper
 
 class ActionAdapterHelperImpl: ActionAdapterHelper {
 

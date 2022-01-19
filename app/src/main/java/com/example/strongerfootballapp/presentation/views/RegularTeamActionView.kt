@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.ui.views
+package com.example.strongerfootballapp.presentation.views
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.RegularActionBinding
-import com.example.strongerfootballapp.model.Player
-import com.example.strongerfootballapp.utils.Mapper
-import com.example.strongerfootballapp.utils.extensions.shortenLastName
+import com.example.strongerfootballapp.domain.model.Player
+import com.example.strongerfootballapp.domain.utils.Mapper
+import com.example.strongerfootballapp.domain.utils.extensions.shortenLastName
 
 @SuppressLint("ViewConstructor")
 class RegularTeamActionView(

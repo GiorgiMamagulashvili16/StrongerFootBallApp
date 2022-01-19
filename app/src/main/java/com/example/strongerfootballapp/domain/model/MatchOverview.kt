@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.model
+package com.example.strongerfootballapp.domain.model
 
 data class MatchOverview(
     val team1: Team,

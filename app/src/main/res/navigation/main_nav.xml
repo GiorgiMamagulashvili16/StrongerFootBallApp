@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/matchFragment"
-        android:name="com.example.strongerfootballapp.ui.match_screen.MatchFragment"
+        android:name="com.example.strongerfootballapp.presentation.match_screen.MatchFragment"
         android:label="match_fragment"
         tools:layout="@layout/match_fragment" />
 </navigation>
