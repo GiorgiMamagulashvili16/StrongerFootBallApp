@@ -1,6 +1,6 @@
 package com.example.strongerfootballapp.ui.match_screen
 
-import com.example.footballapp.ui.details_screen.adapter.helper.ActionAdapterHelperImpl
+import com.example.strongerfootballapp.ui.match_screen.adapter.helper.ActionAdapterHelperImpl
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.model.Match
@@ -48,8 +48,6 @@ class MatchFragment : BaseFragment<MatchFragmentBinding,MatchViewModel>() {
             secondTeamBallPossessionTextView.text = getString(R.string.percent)
                 .format(match.match.team2.ballPosition)
             ballPossessionProgressBar.progress = match.match.team1.ballPosition
-            scoreIndicatorTextView.text =
-                Mapper.mapMatchHalves(1, match.match.matchSummary.summaries).toString()
             matchEventsRecyclerView.adapter = adapter
         }
     }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_dp_47"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_dp_47">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/firstTeamActionIcon"
+        android:id="@+id/actionIconImageView"
         android:layout_width="@dimen/dimen_dp_25"
         android:layout_height="@dimen/dimen_dp_25"
         android:layout_marginEnd="@dimen/dimen_dp_10"
@@ -16,71 +16,78 @@
         tools:src="@drawable/ic_substitution" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/firstTeamFirstPlayerImageCardView"
+        android:id="@+id/firstPlayerImageCardView"
         android:layout_width="@dimen/dimen_dp_30"
         android:layout_height="@dimen/dimen_dp_30"
-        app:cardCornerRadius="@dimen/dimen_dp_15"
         android:layout_marginStart="@dimen/dimen_dp_13"
-        app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible"
+        app:cardCornerRadius="@dimen/dimen_dp_15"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/firstPlayerImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/firstTeamSecondPlayerImageCardView"
+        android:id="@+id/secondPlayerImageCardView"
         android:layout_width="@dimen/dimen_dp_30"
         android:layout_height="@dimen/dimen_dp_30"
-        app:cardCornerRadius="@dimen/dimen_dp_15"
         android:layout_marginStart="@dimen/dimen_dp_13"
+        android:visibility="invisible"
+        app:cardCornerRadius="@dimen/dimen_dp_15"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="invisible">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/secondPlayerImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/firstTeamActionText"
+        android:id="@+id/actionTextTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_dp_8"
         android:textColor="@color/gray"
         android:textSize="@dimen/dimen_sp_11"
-        app:layout_constraintBottom_toTopOf="@+id/firstTeamPlayerName"
-        app:layout_constraintStart_toEndOf="@+id/firstTeamFirstPlayerImageCardView"
-        app:layout_constraintTop_toTopOf="@+id/firstTeamFirstPlayerImageCardView"
+        app:layout_constraintBottom_toTopOf="@+id/playerNameTextView"
+        app:layout_constraintStart_toEndOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintTop_toTopOf="@+id/firstPlayerImageCardView"
         tools:text="26' ragaca" />
 
     <TextView
-        android:id="@+id/firstTeamPlayerName"
+        android:id="@+id/playerNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textColor="@color/black"
         android:textSize="@dimen/dimen_sp_12"
-        app:layout_constraintBottom_toBottomOf="@+id/firstTeamFirstPlayerImageCardView"
-        app:layout_constraintStart_toEndOf="@+id/firstTeamFirstPlayerImageCardView"
-        app:layout_constraintTop_toBottomOf="@+id/firstTeamActionText"
+        app:layout_constraintBottom_toBottomOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintStart_toEndOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintTop_toBottomOf="@+id/actionTextTextView"
         tools:text="26' ragaca" />
 
     <TextView
-        android:id="@+id/firstTeamSubstitutedPlayerName"
+        android:id="@+id/substitutedPlayerNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_dp_8"
         android:textColor="@color/gray"
         android:textSize="@dimen/dimen_sp_12"
-        app:layout_constraintStart_toEndOf="@+id/firstTeamFirstPlayerImageCardView"
-        app:layout_constraintTop_toBottomOf="@+id/firstTeamPlayerName"
+        app:layout_constraintStart_toEndOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameTextView"
         tools:text="26' ragaca" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/textGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="playerNameTextView, substitutedPlayerNameTextView, actionTextTextView"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
