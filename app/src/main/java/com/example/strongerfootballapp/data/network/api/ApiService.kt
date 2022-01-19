@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.data.api
+package com.example.strongerfootballapp.data.network.api
 
 import com.example.strongerfootballapp.domain.model.Match
 import retrofit2.Response

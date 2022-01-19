@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.domain.exceptions
+package com.example.strongerfootballapp.data.network.exceptions
 
 import java.io.IOException
 

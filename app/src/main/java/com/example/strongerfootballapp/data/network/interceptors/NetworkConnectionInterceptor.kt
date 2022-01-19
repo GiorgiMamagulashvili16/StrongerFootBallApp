@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.domain.interceptors
+package com.example.strongerfootballapp.data.network.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Request

@@ -1,6 +1,6 @@
 package com.example.strongerfootballapp.di
 
-import com.example.strongerfootballapp.domain.interceptors.NetworkConnectionInterceptor
+import com.example.strongerfootballapp.data.network.interceptors.NetworkConnectionInterceptor
 import com.example.strongerfootballapp.network.provideHttpClient
 import com.example.strongerfootballapp.network.provideMatchApi
 import com.example.strongerfootballapp.network.provideRetrofit
