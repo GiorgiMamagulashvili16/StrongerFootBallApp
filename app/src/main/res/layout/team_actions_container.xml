@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <com.example.strongerfootballapp.presentation.views.HalfScoreView
-        android:id="@+id/halfScoreView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"
-        />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/firstTeamLinearLayout"
         android:layout_width="0dp"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/halfScoreView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/centerView"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -29,7 +21,7 @@
         android:background="@android:color/transparent"
         android:foreground="@drawable/circle"
         android:foregroundTint="@color/gray"
-        app:layout_constraintTop_toBottomOf="@+id/halfScoreView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -39,7 +31,7 @@
         android:layout_width="@dimen/dimen_dp_1"
         android:layout_height="0dp"
         android:background="@color/gray"
-        app:layout_constraintTop_toBottomOf="@+id/halfScoreView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -49,9 +41,9 @@
         android:layout_width="0dp"
         android:orientation="vertical"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/halfScoreView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/centerView"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

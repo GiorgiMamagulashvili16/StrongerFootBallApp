@@ -20,7 +20,7 @@ class SubstitutionTeamActionView(
     teamType: Int
 ) : ConstraintLayout(context) {
     private val binding: SubstitutionActionBinding =
-        SubstitutionActionBinding.inflate(LayoutInflater.from(context), this, true)
+        SubstitutionActionBinding.inflate(LayoutInflater.from(context), this)
 
     init {
         with(binding) {
@@ -39,7 +39,9 @@ class SubstitutionTeamActionView(
     private fun rotateView() {
         with(binding) {
             root.scaleX = REVERSED_SCALE
-            textGroup.scaleX = REVERSED_SCALE
+            playerNameTextView.scaleX = REVERSED_SCALE
+            substitutedPlayerNameTextView.scaleX = REVERSED_SCALE
+            actionTextTextView.scaleX = REVERSED_SCALE
         }
     }
 

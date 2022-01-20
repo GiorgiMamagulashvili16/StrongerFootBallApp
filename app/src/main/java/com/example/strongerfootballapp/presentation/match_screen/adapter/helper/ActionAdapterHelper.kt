@@ -16,5 +16,5 @@ interface ActionAdapterHelper {
         action: (ConstraintLayout) -> Unit
     )
 
-    fun showHalfScoreView(actionTime: String, halfScoreView: HalfScoreView, data: List<Summary>)
+    fun getHalfScoreView(context: Context, actionTime: String, data: List<Summary>): HalfScoreView?
 }

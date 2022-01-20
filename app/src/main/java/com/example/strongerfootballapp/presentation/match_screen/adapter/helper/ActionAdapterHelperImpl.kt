@@ -2,14 +2,13 @@ package com.example.strongerfootballapp.presentation.match_screen.adapter.helper
 
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.isGone
 import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Summary
-import com.example.strongerfootballapp.presentation.views.RegularTeamActionView
 import com.example.strongerfootballapp.domain.model.TeamAction
-import com.example.strongerfootballapp.presentation.views.HalfScoreView
-import com.example.strongerfootballapp.presentation.views.SubstitutionTeamActionView
 import com.example.strongerfootballapp.domain.utils.Mapper
+import com.example.strongerfootballapp.presentation.views.HalfScoreView
+import com.example.strongerfootballapp.presentation.views.RegularTeamActionView
+import com.example.strongerfootballapp.presentation.views.SubstitutionTeamActionView
 
 class ActionAdapterHelperImpl: ActionAdapterHelper {
 
@@ -31,19 +30,18 @@ class ActionAdapterHelperImpl: ActionAdapterHelper {
         }
     }
 
-    override fun showHalfScoreView(actionTime: String, halfScoreView: HalfScoreView, data: List<Summary>){
+    override fun getHalfScoreView(context: Context, actionTime: String, data: List<Summary>): HalfScoreView? {
         val actionTimeValue = actionTime.toInt()
-        if (actionTimeValue <= HALF_DIVIDER_TIME && !hasFirstHalfStarted){
+        val view = if (actionTimeValue <= HALF_DIVIDER_TIME && !hasFirstHalfStarted){
             val score = Mapper.mapMatchHalves(FIRST_HALF, data)
-            halfScoreView.showHalfScore(score, FIRST_HALF)
             hasFirstHalfStarted = true
-            halfScoreView.isGone = false
+            HalfScoreView(context, score =  score, half = FIRST_HALF)
         }else if (actionTimeValue > HALF_DIVIDER_TIME && !hasSecondHalfStarted){
             val score = Mapper.mapMatchHalves(SECOND_HALF, data)
-            halfScoreView.showHalfScore(score, SECOND_HALF)
             hasSecondHalfStarted = true
-            halfScoreView.isGone = false
-        }
+            HalfScoreView(context, score =  score, half = SECOND_HALF)
+        }else null
+        return view
     }
 
     companion object{

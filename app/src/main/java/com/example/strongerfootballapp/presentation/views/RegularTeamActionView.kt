@@ -19,7 +19,7 @@ class RegularTeamActionView(
     player: Player?,
     teamType: Int
 ) : ConstraintLayout(context) {
-    private val binding = RegularActionBinding.inflate(LayoutInflater.from(context), this, true)
+    private val binding = RegularActionBinding.inflate(LayoutInflater.from(context), this)
 
 
     init {
@@ -39,7 +39,8 @@ class RegularTeamActionView(
     private fun rotateView(){
         with(binding){
             root.scaleX = REVERSED_SCALE
-            textGroup.scaleX = REVERSED_SCALE
+            playerNameTextView.scaleX = REVERSED_SCALE
+            actionTextTextView.scaleX = REVERSED_SCALE
         }
     }
 

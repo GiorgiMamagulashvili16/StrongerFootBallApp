@@ -1,5 +1,6 @@
 package com.example.strongerfootballapp.presentation.views
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -8,15 +9,18 @@ import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.HalfScoreViewBinding
 import com.example.strongerfootballapp.domain.model.Score
 
+@SuppressLint("ViewConstructor")
 class HalfScoreView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
+    score: Score,
+    half: Int
 ): ConstraintLayout(context, attrs, defStyleAttr) {
     private var binding: HalfScoreViewBinding =
         HalfScoreViewBinding.inflate(LayoutInflater.from(context), this, true)
 
-    fun showHalfScore(score: Score, half: Int){
+    init {
         val halfIndicatorText = when(half){
             FIRST_HALF -> context.getString(R.string.half_number).format(FIRST)
             else -> context.getString(R.string.half_number).format(SECOND)
@@ -24,7 +28,6 @@ class HalfScoreView @JvmOverloads constructor(
         binding.halfIndicatorTextView.text = halfIndicatorText
         binding.scoreIndicatorTextView.text = score.toString()
     }
-
 
     companion object{
         private const val FIRST_HALF = 1
