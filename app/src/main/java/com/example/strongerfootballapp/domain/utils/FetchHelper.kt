@@ -4,13 +4,13 @@ import retrofit2.Response
 
 
 inline fun <D, T> fetchData(
-    response: () -> Response<D>,
+    responseCall: () -> Response<D>,
     call: (body: D) -> Resource<T>
 ): Resource<T> {
     return try {
-        val resp = response.invoke()
-        if (resp.isSuccessful) {
-            resp.body()?.let {
+        val response = responseCall.invoke()
+        if (response.isSuccessful) {
+            response.body()?.let {
                 call.invoke(it)
             } ?: Resource.Error(DATA_IS_NULL_MESSAGE)
         } else {
