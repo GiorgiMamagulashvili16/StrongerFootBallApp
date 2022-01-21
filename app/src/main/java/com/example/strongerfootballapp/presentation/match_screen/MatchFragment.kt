@@ -1,5 +1,6 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
+import android.util.Log.d
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.domain.model.Match
@@ -58,7 +59,10 @@ class MatchFragment : BaseFragment<MatchFragmentBinding,MatchViewModel>() {
                     adapter.submitList(it.data.match.matchSummary.summaries)
                     initUI(it.data)
                 }
-                is MatchScreenStates.ErrorLoading -> makeToast(it.message)
+                is MatchScreenStates.ErrorLoading -> {
+                    makeToast(it.message)
+                    d("MatchResponse",it.message!!)
+                }
             }
         }
     }

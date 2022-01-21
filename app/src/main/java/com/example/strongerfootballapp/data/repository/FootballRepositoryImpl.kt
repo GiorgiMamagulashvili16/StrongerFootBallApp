@@ -15,7 +15,7 @@ class FootballRepositoryImpl(
     private val matchDtoMapper: MatchDtoMapper
 ) : FootballRepository {
     override suspend fun getMatch(): Resource<Match> = withContext(Dispatchers.IO) {
-        return@withContext fetchData(response = matchApi.getMatchPreview()) { result ->
+        return@withContext fetchData(response = { matchApi.getMatchPreview() }) { result ->
             val mappedData = matchDtoMapper.mapMatchDto(result)
             Resource.Success(mappedData)
         }
