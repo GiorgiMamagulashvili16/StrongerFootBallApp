@@ -15,7 +15,7 @@ class MatchDtoMapper {
             mapTeamDtoToTeam(matchOverviewDto.team2),
             matchOverviewDto.matchDate,
             matchOverviewDto.matchTime,
-            matchOverviewDto.stadiumAdress,
+            matchOverviewDto.stadiumAddress,
             mapMatchSummaryDtoMatchSummary(matchOverviewDto.matchSummary)
         )
     }

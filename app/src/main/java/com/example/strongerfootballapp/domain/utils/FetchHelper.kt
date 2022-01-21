@@ -14,7 +14,7 @@ inline fun <D, T> fetchData(
                 call.invoke(it)
             } ?: Resource.Error(DATA_IS_NULL_MESSAGE)
         } else {
-            Resource.Error("ge")
+            Resource.Error(response.errorBody()?.string())
         }
     } catch (e: Exception) {
         Resource.Error(e.message)

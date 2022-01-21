@@ -59,10 +59,7 @@ class MatchFragment : BaseFragment<MatchFragmentBinding,MatchViewModel>() {
                     adapter.submitList(it.data.match.matchSummary.summaries)
                     initUI(it.data)
                 }
-                is MatchScreenStates.ErrorLoading -> {
-                    makeToast(it.message)
-                    d("MatchResponse",it.message!!)
-                }
+                is MatchScreenStates.ErrorLoading -> makeToast(it.message)
             }
         }
     }
