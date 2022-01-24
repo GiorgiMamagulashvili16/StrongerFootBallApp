@@ -10,6 +10,15 @@ data class Score(private var firstTeamScore: Int = 0, private var secondTeamScor
 
     fun increaseSecondTeamScore() = secondTeamScore++
 
+    private fun getFirstTeamScore() = firstTeamScore
+
+    private fun getSecondTeamScore() = secondTeamScore
+
+    operator fun plus(other: Score){
+        firstTeamScore += other.getFirstTeamScore()
+        secondTeamScore += other.getSecondTeamScore()
+    }
+
     companion object{
         private const val SCORE_FORMAT = "%d : %d"
     }
