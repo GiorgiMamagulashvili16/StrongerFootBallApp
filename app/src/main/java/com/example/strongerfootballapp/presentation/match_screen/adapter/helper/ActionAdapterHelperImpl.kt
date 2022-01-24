@@ -32,14 +32,13 @@ class ActionAdapterHelperImpl: ActionAdapterHelper {
     override fun getHalfScoreView(context: Context, actionTime: String, data: List<Summary>): HalfScoreView? {
         val actionTimeValue = actionTime.toInt()
         val view = if (actionTimeValue <= HALF_DIVIDER_TIME && !hasFirstHalfStarted){
-            val score = MatchScoreMapper.mapMatchHalves(FIRST_HALF, data)
             hasFirstHalfStarted = true
-            HalfScoreView(context, score =  score, half = FIRST_HALF)
+            HalfScoreView(context, half = FIRST_HALF)
         }else if (actionTimeValue > HALF_DIVIDER_TIME && !hasSecondHalfStarted){
-            val score = MatchScoreMapper.mapMatchHalves(SECOND_HALF, data)
             hasSecondHalfStarted = true
-            HalfScoreView(context, score =  score, half = SECOND_HALF)
+            HalfScoreView(context, half = SECOND_HALF)
         }else null
+        view?.countAndSetHalfScore(data)
         return view
     }
 
