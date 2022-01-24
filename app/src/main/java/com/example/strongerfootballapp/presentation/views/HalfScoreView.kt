@@ -15,7 +15,6 @@ class HalfScoreView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-    private var score: Score? = null,
     private val half: Int
 ): ConstraintLayout(context, attrs, defStyleAttr) {
     private var binding: HalfScoreViewBinding =
@@ -27,7 +26,6 @@ class HalfScoreView @JvmOverloads constructor(
             else -> context.getString(R.string.half_number).format(SECOND)
         }
         binding.halfIndicatorTextView.text = halfIndicatorText
-        binding.scoreIndicatorTextView.text = score.toString()
     }
 
     fun countAndSetHalfScore(summaries: List<Summary>) {
@@ -41,7 +39,6 @@ class HalfScoreView @JvmOverloads constructor(
                 it.countGoals(score)
             }
         }
-        this.score = score
         binding.scoreIndicatorTextView.text = score.toString()
     }
 
