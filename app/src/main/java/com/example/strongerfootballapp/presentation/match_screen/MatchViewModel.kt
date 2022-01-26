@@ -1,10 +1,10 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
+import android.util.Log.d
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.strongerfootballapp.domain.repository.FootballRepository
 import com.example.strongerfootballapp.domain.use_case.GetMatchUseCase
-import com.example.strongerfootballapp.domain.utils.Response
+import com.example.strongerfootballapp.domain.utils.Resource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -16,11 +16,11 @@ class MatchViewModel(private val getMatchUseCase: GetMatchUseCase) : ViewModel()
 
     fun getMatch() {
         viewModelScope.launch {
-            when (val matchResponse = getMatchUseCase()) {
-                is Response.Success -> _matchScreenStateFlow.value =
+            when (val matchResponse = getMatchUseCase.getMatch()) {
+                is Resource.Success -> _matchScreenStateFlow.value =
                     MatchScreenStates.SuccessLoading(matchResponse.data)
 
-                is Response.Error -> _matchScreenStateFlow.value =
+                is Resource.Error -> _matchScreenStateFlow.value =
                     MatchScreenStates.ErrorLoading(matchResponse.message)
             }
         }

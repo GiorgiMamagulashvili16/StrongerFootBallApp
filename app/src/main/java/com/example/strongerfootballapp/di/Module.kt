@@ -1,13 +1,14 @@
 package com.example.strongerfootballapp.di
 
-import com.example.strongerfootballapp.data.mappers.MatchDtoMapper
+import com.example.strongerfootballapp.data.mappers.*
 import com.example.strongerfootballapp.data.network.interceptors.NetworkConnectionInterceptor
+import com.example.strongerfootballapp.data.repository.FootballRepositoryImpl
+import com.example.strongerfootballapp.domain.repository.FootballRepository
+import com.example.strongerfootballapp.domain.use_case.GetMatchUseCase
+import com.example.strongerfootballapp.domain.use_case.GetMatchUseCaseImpl
 import com.example.strongerfootballapp.network.provideHttpClient
 import com.example.strongerfootballapp.network.provideMatchApi
 import com.example.strongerfootballapp.network.provideRetrofit
-import com.example.strongerfootballapp.domain.repository.FootballRepository
-import com.example.strongerfootballapp.data.repository.FootballRepositoryImpl
-import com.example.strongerfootballapp.domain.use_case.GetMatchUseCase
 import com.example.strongerfootballapp.presentation.match_screen.MatchFragment
 import com.example.strongerfootballapp.presentation.match_screen.MatchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -23,8 +24,17 @@ val viewModelModule = module {
         viewModel { MatchViewModel(get()) }
         factory { provideMatchApi(get()) }
         factory<FootballRepository> { FootballRepositoryImpl(get(), get()) }
-        factory { GetMatchUseCase(get()) }
-        factory { MatchDtoMapper() }
+        factory<GetMatchUseCase> { GetMatchUseCaseImpl(get()) }
     }
+}
+val mappersModule = module {
+    single { TeamActionMapper(get()) }
+    single { TeamMapper() }
+    single { SummaryMapper(get()) }
+    single { PlayerMapper() }
+    single { MatchSummaryMapper(get()) }
+    single { MatchOverviewMapper(get(), get()) }
+    single { ActionMapper(get()) }
+    single { MatchMapper(get()) }
 }
 

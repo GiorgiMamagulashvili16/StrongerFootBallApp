@@ -1,17 +1,18 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
+import android.util.Log.d
 import com.example.strongerfootballapp.R
-import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelperImpl
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.domain.model.Match
 import com.example.strongerfootballapp.domain.model.Score
+import com.example.strongerfootballapp.domain.utils.extensions.loadImage
+import com.example.strongerfootballapp.domain.utils.extensions.makeToast
+import com.example.strongerfootballapp.domain.utils.extensions.toFormattedDate
 import com.example.strongerfootballapp.presentation.base.BaseFragment
 import com.example.strongerfootballapp.presentation.base.Inflate
 import com.example.strongerfootballapp.presentation.match_screen.adapter.ActionsAdapter
 import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelper
-import com.example.strongerfootballapp.domain.utils.extensions.loadImage
-import com.example.strongerfootballapp.domain.utils.extensions.makeToast
-import com.example.strongerfootballapp.domain.utils.extensions.toFormattedDate
+import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelperImpl
 import kotlinx.coroutines.flow.collect
 import kotlin.reflect.KClass
 
@@ -53,7 +54,7 @@ class MatchFragment : BaseFragment<MatchFragmentBinding,MatchViewModel>() {
 
     override suspend fun observeStates(viewModel: MatchViewModel) {
         viewModel.matchScreenStateFlow.collect{
-            when (it){
+            when (it) {
                 is MatchScreenStates.SuccessLoading -> {
                     adapter.submitList(it.data.match.matchSummary.summaries)
                     initUI(it.data)

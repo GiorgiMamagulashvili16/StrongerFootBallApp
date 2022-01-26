@@ -5,7 +5,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Summary
 import com.example.strongerfootballapp.domain.model.TeamAction
-import com.example.strongerfootballapp.domain.utils.Mapper
 import com.example.strongerfootballapp.presentation.views.HalfScoreView
 import com.example.strongerfootballapp.presentation.views.RegularTeamActionView
 import com.example.strongerfootballapp.presentation.views.SubstitutionTeamActionView
@@ -33,14 +32,13 @@ class ActionAdapterHelperImpl: ActionAdapterHelper {
     override fun getHalfScoreView(context: Context, actionTime: String, data: List<Summary>): HalfScoreView? {
         val actionTimeValue = actionTime.toInt()
         val view = if (actionTimeValue <= HALF_DIVIDER_TIME && !hasFirstHalfStarted){
-            val score = Mapper.mapMatchHalves(FIRST_HALF, data)
             hasFirstHalfStarted = true
-            HalfScoreView(context, score =  score, half = FIRST_HALF)
+            HalfScoreView(context, half = FIRST_HALF)
         }else if (actionTimeValue > HALF_DIVIDER_TIME && !hasSecondHalfStarted){
-            val score = Mapper.mapMatchHalves(SECOND_HALF, data)
             hasSecondHalfStarted = true
-            HalfScoreView(context, score =  score, half = SECOND_HALF)
+            HalfScoreView(context, half = SECOND_HALF)
         }else null
+        view?.countAndSetHalfScore(data)
         return view
     }
 

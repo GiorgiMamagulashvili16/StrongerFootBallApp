@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.RegularActionBinding
+import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Player
-import com.example.strongerfootballapp.domain.utils.Mapper
 import com.example.strongerfootballapp.domain.utils.extensions.shortenLastName
 
 @SuppressLint("ViewConstructor")
@@ -23,7 +23,7 @@ class RegularTeamActionView(
 
 
     init {
-        val mActionType = Mapper.mapIntToActionType(actionType, goalType)
+        val mActionType = mapIntToActionType(actionType, goalType)
         with(binding){
             mActionType?.let {
                 val actionText = context.getString(it.actionTextRes)
@@ -43,6 +43,9 @@ class RegularTeamActionView(
             actionTextTextView.scaleX = REVERSED_SCALE
         }
     }
+
+    private fun mapIntToActionType(actionId: Int, goalType: Int?): ActionTypes? =
+        ActionTypes.values().find { it.actionId == actionId && it.goalType == goalType }
 
     companion object{
         private const val REVERSED_SCALE = -1f
