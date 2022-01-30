@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_dp_47">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/actionIconImageView"
+        android:layout_width="@dimen/dimen_dp_25"
+        android:layout_height="@dimen/dimen_dp_25"
+        android:layout_marginEnd="@dimen/dimen_dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_substitution" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/firstPlayerImageCardView"
+        android:layout_width="@dimen/dimen_dp_30"
+        android:layout_height="@dimen/dimen_dp_30"
+        android:layout_marginStart="@dimen/dimen_dp_13"
+        android:visibility="invisible"
+        app:cardCornerRadius="@dimen/dimen_dp_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/firstPlayerImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/secondPlayerImageCardView"
+        android:layout_width="@dimen/dimen_dp_30"
+        android:layout_height="@dimen/dimen_dp_30"
+        android:layout_marginStart="@dimen/dimen_dp_13"
+        android:visibility="invisible"
+        app:cardCornerRadius="@dimen/dimen_dp_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/secondPlayerImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/actionTextTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_dp_8"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/dimen_sp_11"
+        app:layout_constraintBottom_toTopOf="@+id/playerNameTextView"
+        app:layout_constraintStart_toEndOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintTop_toTopOf="@+id/firstPlayerImageCardView"
+        tools:text="26' ragaca" />
+
+    <TextView
+        android:id="@+id/playerNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintStart_toEndOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintTop_toBottomOf="@+id/actionTextTextView"
+        tools:text="26' ragaca" />
+
+    <TextView
+        android:id="@+id/substitutedPlayerNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_dp_8"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/dimen_sp_12"
+        app:layout_constraintStart_toEndOf="@+id/firstPlayerImageCardView"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameTextView"
+        tools:text="26' ragaca" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/textGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="playerNameTextView, substitutedPlayerNameTextView, actionTextTextView"
+        />
+
+
+</merge>
