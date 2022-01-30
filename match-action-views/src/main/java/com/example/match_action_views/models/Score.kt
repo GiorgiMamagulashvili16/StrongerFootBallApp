@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.domain.model
+package com.example.match_action_views.models
 
 data class Score(private var firstTeamScore: Int = 0, private var secondTeamScore: Int = 0){
 
