@@ -1,9 +1,8 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
-import android.util.Log.d
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.strongerfootballapp.domain.use_case.GetMatchUseCase
+import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCase
 import com.example.strongerfootballapp.domain.utils.Resource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

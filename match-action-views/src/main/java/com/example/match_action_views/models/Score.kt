@@ -6,6 +6,11 @@ data class Score(private var firstTeamScore: Int = 0, private var secondTeamScor
         return SCORE_FORMAT.format(firstTeamScore, secondTeamScore)
     }
 
+    fun reset() {
+        firstTeamScore = 0
+        secondTeamScore = 0
+    }
+
     fun increaseFirstTeamScore() = firstTeamScore++
 
     fun increaseSecondTeamScore() = secondTeamScore++

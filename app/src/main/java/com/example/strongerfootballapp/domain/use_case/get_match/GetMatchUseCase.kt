@@ -1,4 +1,4 @@
-package com.example.strongerfootballapp.domain.use_case
+package com.example.strongerfootballapp.domain.use_case.get_match
 
 import com.example.strongerfootballapp.domain.model.Match
 import com.example.strongerfootballapp.domain.utils.Resource

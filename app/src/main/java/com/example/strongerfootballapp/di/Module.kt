@@ -4,8 +4,8 @@ import com.example.strongerfootballapp.data.mappers.*
 import com.example.strongerfootballapp.data.network.interceptors.NetworkConnectionInterceptor
 import com.example.strongerfootballapp.data.repository.FootballRepositoryImpl
 import com.example.strongerfootballapp.domain.repository.FootballRepository
-import com.example.strongerfootballapp.domain.use_case.GetMatchUseCase
-import com.example.strongerfootballapp.domain.use_case.GetMatchUseCaseImpl
+import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCase
+import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCaseImpl
 import com.example.strongerfootballapp.network.provideHttpClient
 import com.example.strongerfootballapp.network.provideMatchApi
 import com.example.strongerfootballapp.network.provideRetrofit
