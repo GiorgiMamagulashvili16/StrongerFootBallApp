@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="goals_by">Goals by</string>
+    <string name="own_goal">Own Goal</string>
+    <string name="tripping">Tripping</string>
+    <string name="substitution">Substitution</string>
     <string name="_1st_half">1st half</string>
 </resources>
