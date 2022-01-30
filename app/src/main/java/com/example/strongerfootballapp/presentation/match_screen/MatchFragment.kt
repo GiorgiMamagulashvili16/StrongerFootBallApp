@@ -1,10 +1,9 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
-import android.util.Log.d
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.domain.model.Match
-import com.example.strongerfootballapp.domain.model.Score
+import com.example.match_action_views.models.Score
 import com.example.strongerfootballapp.domain.utils.extensions.loadImage
 import com.example.strongerfootballapp.domain.utils.extensions.makeToast
 import com.example.strongerfootballapp.domain.utils.extensions.toFormattedDate
@@ -32,7 +31,10 @@ class MatchFragment : BaseFragment<MatchFragmentBinding,MatchViewModel>() {
     private val adapter by lazy { ActionsAdapter(helper) }
 
     private fun initUI(match: Match){
-        val score = Score(match.match.team1.score, match.match.team2.score)
+        val score = Score(
+            match.match.team1.score,
+            match.match.team2.score
+        )
         with(binding){
             eventDateAndStadiumName.text = getString(R.string.date_and_stadium_name)
                 .format(match.match.matchDate.toFormattedDate(), match.match.stadiumAdress)
