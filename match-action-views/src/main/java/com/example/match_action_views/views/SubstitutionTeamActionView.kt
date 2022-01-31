@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.match_action_views.R
 import com.example.match_action_views.databinding.SubstitutionActionBinding
 import com.example.match_action_views.extensions.loadImage
 import com.example.match_action_views.extensions.shortenLastName
@@ -28,7 +29,7 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
         if (teamType == SECOND_TEAM) rotateView()
     }
 
-    fun setActionText(actionText: Int, actionTime: Int) {
+    fun setActionText(actionText: Int = R.string.action_text, actionTime: String) {
         binding.actionTextTextView.text =
             context.getString(actionText)
                 .format(actionTime, ActionTypes.SUBSTITUTION.actionImageRes)
