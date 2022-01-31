@@ -19,7 +19,6 @@
         android:layout_width="@dimen/dimen_dp_7"
         android:layout_height="@dimen/dimen_dp_7"
         android:background="@android:color/transparent"
-        android:foreground="@drawable/circle"
         android:foregroundTint="@color/gray"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

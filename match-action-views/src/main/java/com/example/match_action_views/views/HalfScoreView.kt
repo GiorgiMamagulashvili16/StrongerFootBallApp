@@ -9,7 +9,7 @@ import com.example.match_action_views.databinding.HalfScoreViewBinding
 import com.example.match_action_views.models.Score
 
 @SuppressLint("ViewConstructor")
-class HalfScoreView @JvmOverloads constructor(
+class  HalfScoreView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
