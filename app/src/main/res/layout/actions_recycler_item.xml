@@ -4,10 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.example.strongerfootballapp.presentation.views.TeamActionContainerView
+    <com.example.match_action_views.views.TeamActionContainerView
         android:id="@+id/actionsContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

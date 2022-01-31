@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Giorgi.mamagulashvil/AndroidStudioProjects/StrongerFootBallApp/app/src/main/res/layout/actions_recycler_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Giorgi.mamagulashvil/AndroidStudioProjects/StrongerFootBallApp/match-action-views/src/main/res/drawable/ic_goal.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Giorgi.mamagulashvil/AndroidStudioProjects/StrongerFootBallApp/match-action-views/src/main/res/layout/placeholder.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Giorgi.mamagulashvil/AndroidStudioProjects/StrongerFootBallApp/match-action-views/src/main/res/layout/regular_action.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Giorgi.mamagulashvil/AndroidStudioProjects/StrongerFootBallApp/match-action-views/src/main/res/layout/substitution_action.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Giorgi.mamagulashvil/AndroidStudioProjects/StrongerFootBallApp/match-action-views/src/main/res/layout/team_actions_container.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/shio.andghuladze/AndroidStudioProjects/StrongerFootBallApp/app/src/main/res/drawable/circle.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/shio.andghuladze/AndroidStudioProjects/StrongerFootBallApp/app/src/main/res/drawable/ic_own_goal.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/shio.andghuladze/AndroidStudioProjects/StrongerFootBallApp/app/src/main/res/layout/actions_recycler_item.xml" value="0.21875" />
