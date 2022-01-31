@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.strongerfootballapp.databinding.ActionsRecyclerItemBinding
-import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
 import com.example.strongerfootballapp.domain.model.Summary
 import com.example.strongerfootballapp.domain.utils.ItemDiffUtil
 import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelper
@@ -21,8 +20,7 @@ class ActionsAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.onBind(currentList, helper,)
-
+        holder.onBind(currentList, helper)
 
     class ViewHolder(private val binding: ActionsRecyclerItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -37,10 +35,12 @@ class ActionsAdapter(
                     current.actionTime,
                     helper.mapTeamAction(current.team1Action)
                 )
+
                 actionsContainer.submitTeamActions(
                     current.actionTime,
                     helper.mapTeamAction(current.team2Action)
                 )
+
                 helper.getHalfScoreView(itemView.context, current.actionTime, summaries)?.let {
                     binding.root.addView(it, 0)
                 }

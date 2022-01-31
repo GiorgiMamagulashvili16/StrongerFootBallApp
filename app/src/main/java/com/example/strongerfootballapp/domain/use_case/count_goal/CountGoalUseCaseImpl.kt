@@ -1,15 +1,15 @@
 package com.example.strongerfootballapp.domain.use_case.count_goal
 
-import com.example.match_action_views.models.Score
+import com.example.strongerfootballapp.domain.model.Score
 import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Summary
 import com.example.strongerfootballapp.domain.model.TeamAction
 
 class CountGoalUseCaseImpl : CountGoalsUseCase {
-    private val score = Score()
+    private lateinit var score: Score
 
     override fun countGoals(half: Int, summaries: List<Summary>): Score {
-        score.reset()
+        score = Score()
         summaries.forEach {
             val isHalfTimeCorrect = when (half) {
                 FIRST_HALF -> it.actionTime.toInt() <= HALVES_DIVIDER_TIME

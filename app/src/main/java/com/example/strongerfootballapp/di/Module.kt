@@ -7,6 +7,8 @@ import com.example.strongerfootballapp.domain.mappers.ActionUiModelMapper
 import com.example.strongerfootballapp.domain.mappers.PlayerUiModelMapper
 import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
 import com.example.strongerfootballapp.domain.repository.FootballRepository
+import com.example.strongerfootballapp.domain.use_case.count_goal.CountGoalUseCaseImpl
+import com.example.strongerfootballapp.domain.use_case.count_goal.CountGoalsUseCase
 import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCase
 import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCaseImpl
 import com.example.strongerfootballapp.network.provideHttpClient
@@ -26,10 +28,11 @@ val networkModule = module {
 }
 val viewModelModule = module {
     scope<MatchFragment> {
-        viewModel { MatchViewModel(get()) }
+        viewModel { MatchViewModel(get(), get()) }
         factory { provideMatchApi(get()) }
         factory<FootballRepository> { FootballRepositoryImpl(get(), get()) }
         factory<GetMatchUseCase> { GetMatchUseCaseImpl(get()) }
+        factory<CountGoalsUseCase> { CountGoalUseCaseImpl() }
         factory<ActionAdapterHelper> { ActionAdapterHelperImpl(get()) }
     }
 }

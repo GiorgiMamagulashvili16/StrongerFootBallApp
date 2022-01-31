@@ -1,6 +1,6 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
-import com.example.match_action_views.models.Score
+import com.example.strongerfootballapp.domain.model.Score
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
@@ -20,16 +20,17 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
     override val viewModelClass: KClass<MatchViewModel>
         get() = MatchViewModel::class
 
+    private val helper: ActionAdapterHelper by inject()
+    private val adapter by lazy { ActionsAdapter(helper) }
+
     override fun inflateFragment(): Inflate<MatchFragmentBinding> {
         return MatchFragmentBinding::inflate
     }
 
     override fun onBindViewModel(viewModel: MatchViewModel) {
         viewModel.getMatch()
-    }
 
-    private val helper: ActionAdapterHelper by inject()
-    private val adapter by lazy { ActionsAdapter(helper) }
+    }
 
     private fun initUI(match: Match) {
         val score = Score(
@@ -59,11 +60,19 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
         viewModel.matchScreenStateFlow.collect {
             when (it) {
                 is MatchScreenStates.SuccessLoading -> {
-                    adapter.submitList(it.data.match.matchSummary.summaries)
+                    val summaries = it.data.match.matchSummary.summaries
+                    helper.setFirstHalfScore(viewModel.getHalfScore(FIRST_HALF, summaries))
+                    helper.setSecondHalfScore(viewModel.getHalfScore(SECOND_HALF, summaries))
+                    adapter.submitList(summaries)
                     initUI(it.data)
                 }
                 is MatchScreenStates.ErrorLoading -> makeToast(it.message)
             }
         }
+    }
+
+    companion object{
+        private const val FIRST_HALF = 1
+        private const val SECOND_HALF = 2
     }
 }
