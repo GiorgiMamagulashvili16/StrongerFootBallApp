@@ -2,6 +2,7 @@ package com.example.strongerfootballapp.presentation.match_screen.adapter.helper
 
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.match_action_views.models.TeamActionUiModel
 import com.example.match_action_views.views.HalfScoreView
 import com.example.match_action_views.views.RegularTeamActionView
 import com.example.match_action_views.views.SubstitutionTeamActionView
@@ -10,7 +11,7 @@ import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Summary
 import com.example.strongerfootballapp.domain.model.TeamAction
 
-class ActionAdapterHelperImpl(override val teamActionUiModelMapper: TeamActionUiModelMapper) :
+class ActionAdapterHelperImpl(private val teamActionUiModelMapper: TeamActionUiModelMapper) :
     ActionAdapterHelper {
 
     private var hasFirstHalfStarted = false
@@ -45,6 +46,10 @@ class ActionAdapterHelperImpl(override val teamActionUiModelMapper: TeamActionUi
             HalfScoreView(context)
         } else null
         return view
+    }
+
+    override fun mapTeamAction(actions: List<TeamAction>?): List<TeamActionUiModel>? {
+        return teamActionUiModelMapper.mapToNullableList(actions)
     }
 
     companion object {

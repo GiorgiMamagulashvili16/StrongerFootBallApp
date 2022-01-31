@@ -35,11 +35,11 @@ class ActionsAdapter(
             with(binding) {
                 actionsContainer.submitTeamActions(
                     current.actionTime,
-                    helper.teamActionUiModelMapper.mapToNullableList(current.team1Action)
+                    helper.mapTeamAction(current.team1Action)
                 )
                 actionsContainer.submitTeamActions(
                     current.actionTime,
-                    helper.teamActionUiModelMapper.mapToNullableList(current.team2Action)
+                    helper.mapTeamAction(current.team2Action)
                 )
                 helper.getHalfScoreView(itemView.context, current.actionTime, summaries)?.let {
                     binding.root.addView(it, 0)
