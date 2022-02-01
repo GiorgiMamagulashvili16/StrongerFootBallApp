@@ -29,9 +29,10 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
     }
 
     fun setActionText(actionText: Int = R.string.action_text, actionTime: String) {
+        val actionTimeText = context.getString(ActionTypes.SUBSTITUTION.actionTextRes)
         binding.actionTextTextView.text =
             context.getString(actionText)
-                .format(actionTime, ActionTypes.SUBSTITUTION.actionImageRes)
+                .format(actionTime, actionTimeText)
     }
 
     private fun rotateView() {

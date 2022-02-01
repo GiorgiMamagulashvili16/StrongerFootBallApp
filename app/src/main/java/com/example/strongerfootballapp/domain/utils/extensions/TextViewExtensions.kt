@@ -15,7 +15,7 @@ fun TextView.setTextWithMultipleColor(
     (text.indices).forEach {
         spannableText.setSpan(
             ForegroundColorSpan(ContextCompat.getColor(context, colors[it])),
-            startInd, text[it].length + startInd,
+            startInd + 1, text[it].length + startInd + 1,
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         startInd += text[it].length
@@ -24,4 +24,4 @@ fun TextView.setTextWithMultipleColor(
 }
 
 private const val START_INDEX_FOR_SPANNABLE_TEXT = 0
-private const val EMPTY_SPACE = ""
+private const val EMPTY_SPACE = " "

@@ -1,11 +1,10 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
+import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
 import com.example.strongerfootballapp.domain.model.Match
 import com.example.strongerfootballapp.domain.model.Score
-import com.example.strongerfootballapp.domain.utils.extensions.launchLifeCycleScope
-import com.example.strongerfootballapp.domain.utils.extensions.loadImage
-import com.example.strongerfootballapp.domain.utils.extensions.makeToast
+import com.example.strongerfootballapp.domain.utils.extensions.*
 import com.example.strongerfootballapp.presentation.base.BaseFragment
 import com.example.strongerfootballapp.presentation.base.Inflate
 import com.example.strongerfootballapp.presentation.match_screen.adapter.ActionsAdapter
@@ -27,7 +26,7 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
 
     override fun onBindViewModel(viewModel: MatchViewModel) {
         viewModel.getMatch()
-        observeMatchDateAndStadiumInfo(viewModel)
+//        observeMatchDateAndStadiumInfo(viewModel)
         observeMatchTime(viewModel)
         observeFirstTeamBallPossession(viewModel)
         observeSecondTeamBallPossession(viewModel)
@@ -57,20 +56,21 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
             with(match.match) {
                 setTeamsInfo(team1.teamImage, team2.teamImage, team1.teamName, team2.teamName)
                 setMatchStatistics(score, team1.ballPosition)
+                setMatchDate(matchDate, stadiumAdress)
             }
             matchEventsRecyclerView.adapter = adapter
         }
     }
 
-    private fun observeMatchDateAndStadiumInfo(matchViewModel: MatchViewModel) {
-        launchLifeCycleScope {
-            matchViewModel.matchDateAndStadiumInfoFlow.collect {
-                it?.let {
-                    binding.eventDateAndStadiumName.text = it
-                }
-            }
-        }
-    }
+//    private fun observeMatchDateAndStadiumInfo(matchViewModel: MatchViewModel) {
+//        launchLifeCycleScope {
+//            matchViewModel.matchDateAndStadiumInfoFlow.collect {
+//                it?.let {
+//                    binding.eventDateAndStadiumName.text = it
+//                }
+//            }
+//        }
+//    }
 
     private fun observeMatchTime(matchViewModel: MatchViewModel) {
         launchLifeCycleScope {
@@ -124,6 +124,15 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
             matchScoreTextView.text = score.toString()
             ballPossessionProgressBar.progress = firstTeamBallPossession
         }
+    }
+
+    private fun setMatchDate(date: Long, stadiumName: String) {
+        binding.eventDateAndStadiumName.setTextWithMultipleColor(
+            mutableListOf(date.toFormattedDate(), stadiumName), mutableListOf(
+                R.color.app_main_color, R.color.gray
+            )
+        )
+
     }
 
     companion object {

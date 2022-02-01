@@ -24,7 +24,7 @@
         android:layout_marginTop="18dp"
         android:paddingHorizontal="@dimen/dimens_dp_17"
         app:cardCornerRadius="@dimen/dimens_dp_15"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameWeekTextView">
@@ -62,20 +62,20 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/teamOneStar"
             android:layout_width="@dimen/dimens_dp_14"
-            android:background="@drawable/ic_star"
             android:layout_height="@dimen/dimens_dp_14"
             android:layout_gravity="start"
             android:layout_marginStart="@dimen/dimens_dp_31"
-            android:layout_marginTop="@dimen/dimens_dp_58" />
+            android:layout_marginTop="@dimen/dimens_dp_58"
+            android:background="@drawable/ic_star" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/teamTwoStar"
             android:layout_width="@dimen/dimens_dp_14"
-            android:background="@drawable/ic_star"
             android:layout_height="@dimen/dimens_dp_14"
             android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dimens_dp_58"
             android:layout_marginEnd="@dimen/dimens_dp_31"
-            android:layout_marginTop="@dimen/dimens_dp_58" />
+            android:background="@drawable/ic_star" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/teamTwoLogoImageView"

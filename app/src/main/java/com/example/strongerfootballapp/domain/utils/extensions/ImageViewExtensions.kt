@@ -5,7 +5,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.strongerfootballapp.R
 
-fun ImageView.loadImage(url: String?, drawable: Int){
+fun ImageView.loadImage(url: String?){
     Glide
         .with(this)
         .load(url)
