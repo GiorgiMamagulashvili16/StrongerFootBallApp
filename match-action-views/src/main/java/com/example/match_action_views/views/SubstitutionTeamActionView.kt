@@ -24,7 +24,6 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
             secondPlayerImage.loadImage(player2?.playerImage)
             playerNameTextView.text = player1?.playerName?.shortenLastName()
             substitutedPlayerNameTextView.text = player2?.playerName?.shortenLastName()
-            actionIconImageView.setImageResource(ActionTypes.SUBSTITUTION.actionImageRes)
         }
         if (teamType == SECOND_TEAM) rotateView()
     }
