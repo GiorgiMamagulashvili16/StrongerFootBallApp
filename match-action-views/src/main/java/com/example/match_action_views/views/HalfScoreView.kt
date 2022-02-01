@@ -20,12 +20,7 @@ class  HalfScoreView @JvmOverloads constructor(
         binding.halfIndicatorTextView.text = indicator
     }
 
-    fun setScore(firstTeamScore: Int?, secondTeamScore: Int?, format: String = SCORE_FORMAT){
-        binding.scoreIndicatorTextView.text = format.format(firstTeamScore?:0, secondTeamScore?:0)
+    fun setScore(score: String){
+        binding.scoreIndicatorTextView.text = score
     }
-
-    companion object{
-        private const val SCORE_FORMAT = "%d : %d"
-    }
-
 }

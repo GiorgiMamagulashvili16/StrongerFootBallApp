@@ -1,10 +1,9 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
-import com.example.strongerfootballapp.domain.model.Score
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
-import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
 import com.example.strongerfootballapp.domain.model.Match
+import com.example.strongerfootballapp.domain.model.Score
 import com.example.strongerfootballapp.domain.utils.extensions.loadImage
 import com.example.strongerfootballapp.domain.utils.extensions.makeToast
 import com.example.strongerfootballapp.domain.utils.extensions.toFormattedDate

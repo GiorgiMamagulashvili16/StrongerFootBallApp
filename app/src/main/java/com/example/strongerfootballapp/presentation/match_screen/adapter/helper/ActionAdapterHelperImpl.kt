@@ -16,11 +16,10 @@ class ActionAdapterHelperImpl(
     private val teamActionUiModelMapper: TeamActionUiModelMapper,
 ) : ActionAdapterHelper {
 
-    private var hasFirstHalfStarted = false
-    private var hasSecondHalfStarted = false
-
     private var firstHalfScore: Score? = null
     private var secondHalfScore: Score? = null
+
+    private val matchHalf = MatchHalf(1)
 
     override fun setFirstHalfScore(score: Score) {
         firstHalfScore = score
@@ -51,34 +50,18 @@ class ActionAdapterHelperImpl(
         data: List<Summary>,
     ): HalfScoreView? {
         val actionTimeValue = actionTime.toInt()
-        val view = if (actionTimeValue <= HALF_DIVIDER_TIME && !hasFirstHalfStarted) {
-
-            hasFirstHalfStarted = true
+        val view = if (!matchHalf.hasHalfStarted(actionTimeValue)) {
+            val score = matchHalf.determineCorrespondingScore(firstHalfScore, secondHalfScore)
             HalfScoreView(context).apply {
-                setHalfIndicator(FIRST_HALF)
-                setScore(firstHalfScore?.getFirstTeamScore(), firstHalfScore?.getSecondTeamScore())
+                setScore(score.toString())
+                setHalfIndicator(context.getString(matchHalf.getHalfIndicator()))
             }
-
-        } else if (actionTimeValue > HALF_DIVIDER_TIME && !hasSecondHalfStarted) {
-
-            hasSecondHalfStarted = true
-            HalfScoreView(context).apply {
-                setHalfIndicator(SECOND_HALF)
-                setScore(secondHalfScore?.getFirstTeamScore(), secondHalfScore?.getSecondTeamScore())
-            }
-
         } else null
         return view
     }
 
     override fun mapTeamAction(actions: List<TeamAction>?): List<TeamActionUiModel>? {
         return teamActionUiModelMapper.mapToNullableList(actions)
-    }
-
-    companion object {
-        private const val HALF_DIVIDER_TIME = 45
-        private const val FIRST_HALF = "1st half"
-        private const val SECOND_HALF = "2nd half"
     }
 
 }
