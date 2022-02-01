@@ -1,12 +1,12 @@
 package com.example.strongerfootballapp.presentation.match_screen
 
-import com.example.match_action_views.models.Score
+
 import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.MatchFragmentBinding
-import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
 import com.example.strongerfootballapp.domain.model.Match
 import com.example.strongerfootballapp.domain.utils.extensions.loadImage
 import com.example.strongerfootballapp.domain.utils.extensions.makeToast
+import com.example.strongerfootballapp.domain.utils.extensions.setTextWithMultipleColor
 import com.example.strongerfootballapp.domain.utils.extensions.toFormattedDate
 import com.example.strongerfootballapp.presentation.base.BaseFragment
 import com.example.strongerfootballapp.presentation.base.Inflate
@@ -37,8 +37,9 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
             match.match.team2.score
         )
         with(binding) {
-            eventDateAndStadiumName.text = getString(R.string.date_and_stadium_name)
-                .format(match.match.matchDate.toFormattedDate(), match.match.stadiumAdress)
+            eventDateAndStadiumName.setTextWithMultipleColor(mutableListOf(match.match.matchDate.toFormattedDate(), match.match.stadiumAdress), mutableListOf(R.color.app_main_color, R.color.gray))
+//            eventDateAndStadiumName.text = getString(R.string.date_and_stadium_name)
+//                .format(match.match.matchDate.toFormattedDate(), match.match.stadiumAdress)
             teamOneLogoImageView.loadImage(match.match.team1.teamImage)
             teamOneNameTextView.text = match.match.team1.teamName
             teamTwoLogoImageView.loadImage(match.match.team2.teamImage)

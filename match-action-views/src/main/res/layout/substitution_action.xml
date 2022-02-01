@@ -5,16 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dimen_dp_47">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/actionIconImageView"
-        android:layout_width="@dimen/dimen_dp_25"
-        android:layout_height="@dimen/dimen_dp_25"
-        android:layout_marginEnd="@dimen/dimen_dp_10"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_substitution" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/firstPlayerImageCardView"
         android:layout_width="@dimen/dimen_dp_30"
@@ -86,8 +76,27 @@
         android:id="@+id/textGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="playerNameTextView, substitutedPlayerNameTextView, actionTextTextView"
-        />
+        app:constraint_referenced_ids="playerNameTextView, substitutedPlayerNameTextView, actionTextTextView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dimen_dp_11"
+        android:layout_height="@dimen/dimen_dp_11"
+        android:layout_marginEnd="@dimen/dimen_dp_11"
+        app:layout_constraintBottom_toTopOf="@+id/substitutedPlayerNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionTextTextView"
+        app:srcCompat="@drawable/ic_up_arrow" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/dimen_dp_11"
+        android:layout_height="@dimen/dimen_dp_11"
+        android:layout_marginEnd="@dimen/dimen_dp_11"
+        app:layout_constraintBottom_toBottomOf="@+id/substitutedPlayerNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameTextView"
+        app:srcCompat="@drawable/ic_down_arrow" />
 
 
 </merge>
