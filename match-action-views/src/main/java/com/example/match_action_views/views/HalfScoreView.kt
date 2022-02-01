@@ -12,18 +12,16 @@ class  HalfScoreView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-    firstTeamScore: Int?,
-    secondTeamScore: Int?
 ): ConstraintLayout(context, attrs, defStyleAttr) {
     private var binding: HalfScoreViewBinding =
         HalfScoreViewBinding.inflate(LayoutInflater.from(context), this, true)
 
-    init {
-        binding.scoreIndicatorTextView.text = SCORE_FORMAT.format(firstTeamScore?:0, secondTeamScore?:0)
-    }
-
     fun setHalfIndicator(indicator: String){
         binding.halfIndicatorTextView.text = indicator
+    }
+
+    fun setScore(firstTeamScore: Int?, secondTeamScore: Int?, format: String = SCORE_FORMAT){
+        binding.scoreIndicatorTextView.text = format.format(firstTeamScore?:0, secondTeamScore?:0)
     }
 
     companion object{

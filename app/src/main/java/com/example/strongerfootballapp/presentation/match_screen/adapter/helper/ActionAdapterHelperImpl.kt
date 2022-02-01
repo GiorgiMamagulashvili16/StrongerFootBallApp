@@ -54,23 +54,17 @@ class ActionAdapterHelperImpl(
         val view = if (actionTimeValue <= HALF_DIVIDER_TIME && !hasFirstHalfStarted) {
 
             hasFirstHalfStarted = true
-            HalfScoreView(
-                context,
-                firstTeamScore = firstHalfScore?.getFirstTeamScore(),
-                secondTeamScore = firstHalfScore?.getSecondTeamScore()
-            ).apply {
+            HalfScoreView(context).apply {
                 setHalfIndicator(FIRST_HALF)
+                setScore(firstHalfScore?.getFirstTeamScore(), firstHalfScore?.getSecondTeamScore())
             }
 
         } else if (actionTimeValue > HALF_DIVIDER_TIME && !hasSecondHalfStarted) {
 
             hasSecondHalfStarted = true
-            HalfScoreView(
-                context,
-                firstTeamScore = secondHalfScore?.getFirstTeamScore(),
-                secondTeamScore = secondHalfScore?.getSecondTeamScore()
-            ).apply {
+            HalfScoreView(context).apply {
                 setHalfIndicator(SECOND_HALF)
+                setScore(secondHalfScore?.getFirstTeamScore(), secondHalfScore?.getSecondTeamScore())
             }
 
         } else null
