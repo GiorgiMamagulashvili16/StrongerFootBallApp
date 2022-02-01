@@ -1,4 +1,4 @@
-package com.example.match_action_views.models
+package com.example.strongerfootballapp.domain.model
 
 data class Score(private var firstTeamScore: Int = 0, private var secondTeamScore: Int = 0){
 
@@ -10,9 +10,9 @@ data class Score(private var firstTeamScore: Int = 0, private var secondTeamScor
 
     fun increaseSecondTeamScore() = secondTeamScore++
 
-    private fun getFirstTeamScore() = firstTeamScore
+    fun getFirstTeamScore() = firstTeamScore
 
-    private fun getSecondTeamScore() = secondTeamScore
+    fun getSecondTeamScore() = secondTeamScore
 
     operator fun plus(other: Score){
         firstTeamScore += other.getFirstTeamScore()
