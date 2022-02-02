@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.match_action_views.databinding.HalfScoreViewBinding
-import com.example.match_action_views.models.Score
 
 @SuppressLint("ViewConstructor")
 class  HalfScoreView @JvmOverloads constructor(
@@ -17,12 +16,11 @@ class  HalfScoreView @JvmOverloads constructor(
     private var binding: HalfScoreViewBinding =
         HalfScoreViewBinding.inflate(LayoutInflater.from(context), this, true)
 
-    fun setScore(score: Score){
-        binding.scoreIndicatorTextView.text = score.toString()
-    }
-
     fun setHalfIndicator(indicator: String){
         binding.halfIndicatorTextView.text = indicator
     }
 
+    fun setScore(score: String){
+        binding.scoreIndicatorTextView.text = score
+    }
 }

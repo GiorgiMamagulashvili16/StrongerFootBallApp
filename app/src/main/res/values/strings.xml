@@ -21,4 +21,7 @@
     <string name="substitution">Substitution</string>
     <string name="action_text">%s\' %s</string>
     <string name="half_number">%s Half</string>
+    <string name="first_half">1st half</string>
+    <string name="second_half">2nd half</string>
+    <string name="unknown_half">Half Unknown</string>
 </resources>

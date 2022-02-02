@@ -7,8 +7,11 @@ import com.example.strongerfootballapp.domain.mappers.ActionUiModelMapper
 import com.example.strongerfootballapp.domain.mappers.PlayerUiModelMapper
 import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
 import com.example.strongerfootballapp.domain.repository.FootballRepository
-import com.example.strongerfootballapp.domain.use_case.GetMatchUseCase
-import com.example.strongerfootballapp.domain.use_case.GetMatchUseCaseImpl
+import com.example.strongerfootballapp.domain.use_case.count_goal.CountGoalUseCaseImpl
+import com.example.strongerfootballapp.domain.use_case.count_goal.CountGoalsUseCase
+import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCase
+import com.example.strongerfootballapp.domain.use_case.get_match.GetMatchUseCaseImpl
+import com.example.strongerfootballapp.domain.utils.ResourcesProvider
 import com.example.strongerfootballapp.network.provideHttpClient
 import com.example.strongerfootballapp.network.provideMatchApi
 import com.example.strongerfootballapp.network.provideRetrofit
@@ -16,6 +19,7 @@ import com.example.strongerfootballapp.presentation.match_screen.MatchFragment
 import com.example.strongerfootballapp.presentation.match_screen.MatchViewModel
 import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelper
 import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelperImpl
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -26,10 +30,11 @@ val networkModule = module {
 }
 val viewModelModule = module {
     scope<MatchFragment> {
-        viewModel { MatchViewModel(get()) }
+        viewModel { MatchViewModel(get(), get(), get()) }
         factory { provideMatchApi(get()) }
         factory<FootballRepository> { FootballRepositoryImpl(get(), get()) }
         factory<GetMatchUseCase> { GetMatchUseCaseImpl(get()) }
+        factory<CountGoalsUseCase> { CountGoalUseCaseImpl() }
         factory<ActionAdapterHelper> { ActionAdapterHelperImpl(get()) }
     }
 }
@@ -45,6 +50,7 @@ val mappersModule = module {
     single { PlayerUiModelMapper() }
     single { ActionUiModelMapper(get()) }
     single { TeamActionUiModelMapper(get()) }
-
 }
-
+val resourcesModule = module {
+    single { ResourcesProvider(androidContext()) }
+}

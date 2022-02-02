@@ -53,7 +53,6 @@ class RegularTeamActionView(
         ActionTypes.values().find { it.actionId == actionId && it.goalType == goalType }
 
     companion object {
-        private const val REVERSED_SCALE = -1f
         private const val SECOND_TEAM = 2
     }
 

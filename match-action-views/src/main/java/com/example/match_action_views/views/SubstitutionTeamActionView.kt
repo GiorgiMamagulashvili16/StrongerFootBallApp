@@ -42,7 +42,6 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
     }
 
     companion object {
-        private const val REVERSED_SCALE = -1f
         private const val SECOND_TEAM = 2
     }
 }
