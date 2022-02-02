@@ -26,7 +26,6 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
 
     override fun onBindViewModel(viewModel: MatchViewModel) {
         viewModel.getMatch()
-//        observeMatchDateAndStadiumInfo(viewModel)
         observeMatchTime(viewModel)
         observeFirstTeamBallPossession(viewModel)
         observeSecondTeamBallPossession(viewModel)
@@ -61,16 +60,6 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
             matchEventsRecyclerView.adapter = adapter
         }
     }
-
-//    private fun observeMatchDateAndStadiumInfo(matchViewModel: MatchViewModel) {
-//        launchLifeCycleScope {
-//            matchViewModel.matchDateAndStadiumInfoFlow.collect {
-//                it?.let {
-//                    binding.eventDateAndStadiumName.text = it
-//                }
-//            }
-//        }
-//    }
 
     private fun observeMatchTime(matchViewModel: MatchViewModel) {
         launchLifeCycleScope {
@@ -132,7 +121,6 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
                 R.color.app_main_color, R.color.gray
             )
         )
-
     }
 
     companion object {
