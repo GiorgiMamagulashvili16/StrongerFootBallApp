@@ -3,6 +3,7 @@ package com.example.strongerfootballapp.di
 import com.example.strongerfootballapp.data.mappers.*
 import com.example.strongerfootballapp.data.network.interceptors.NetworkConnectionInterceptor
 import com.example.strongerfootballapp.data.repository.FootballRepositoryImpl
+import com.example.strongerfootballapp.domain.mappers.ActionTypeUIModelMapper
 import com.example.strongerfootballapp.domain.mappers.ActionUiModelMapper
 import com.example.strongerfootballapp.domain.mappers.PlayerUiModelMapper
 import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
@@ -49,7 +50,8 @@ val mappersModule = module {
     single { MatchMapper(get()) }
     single { PlayerUiModelMapper() }
     single { ActionUiModelMapper(get()) }
-    single { TeamActionUiModelMapper(get()) }
+    single { ActionTypeUIModelMapper() }
+    single { TeamActionUiModelMapper(get(), get()) }
 }
 val resourcesModule = module {
     single { ResourcesProvider(androidContext()) }

@@ -13,5 +13,12 @@ enum class ActionTypes(
     OWN_GOAL(R.drawable.ic_own_goal, R.string.own_goal, 1, 2),
     YELLOW_CARD(R.drawable.icyellow_card, R.string.tripping, 2),
     RED_CARD(R.drawable.ic_red_card, R.string.tripping, 3),
-    SUBSTITUTION(R.drawable.ic_substitution, R.string.substitution, 4)
+    SUBSTITUTION(R.drawable.ic_substitution, R.string.substitution, 4);
+
+    companion object {
+        fun getActionType(actionId: Int, goalType: Int?): ActionTypes? =
+            values().find {
+                it.actionId == actionId && it.goalType == goalType
+            }
+    }
 }

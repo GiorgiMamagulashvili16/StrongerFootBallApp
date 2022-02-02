@@ -9,7 +9,7 @@ import com.example.match_action_views.R
 import com.example.match_action_views.databinding.SubstitutionActionBinding
 import com.example.match_action_views.extensions.loadImage
 import com.example.match_action_views.extensions.shortenLastName
-import com.example.match_action_views.models.ActionTypes
+import com.example.match_action_views.models.ActionTypeUIModel
 import com.example.match_action_views.models.PlayerUiModel
 
 
@@ -28,8 +28,8 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
         if (teamType == SECOND_TEAM) rotateView()
     }
 
-    fun setActionText(actionText: Int = R.string.action_text, actionTime: String) {
-        val actionTimeText = context.getString(ActionTypes.SUBSTITUTION.actionTextRes)
+    fun setActionText(actionText: Int, actionTime: String, actionType: ActionTypeUIModel) {
+        val actionTimeText = context.getString(actionType.actionTextRes)
         binding.actionTextTextView.text =
             context.getString(actionText)
                 .format(actionTime, actionTimeText)

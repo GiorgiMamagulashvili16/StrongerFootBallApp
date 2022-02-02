@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.match_action_views.databinding.TeamActionsContainerBinding
-import com.example.match_action_views.models.ActionTypes
 import com.example.match_action_views.models.TeamActionUiModel
 
 class TeamActionContainerView @JvmOverloads constructor(
@@ -17,17 +16,24 @@ class TeamActionContainerView @JvmOverloads constructor(
     private val binding =
         TeamActionsContainerBinding.inflate(LayoutInflater.from(context), this)
 
-    fun submitTeamActions(actionTime: String, teamActions: List<TeamActionUiModel>?) {
+    fun submitTeamActions(
+        actionTime: String,
+        teamActions: List<TeamActionUiModel>?,
+        substitutionActionType: Int,
+        actionTextFormatRes: Int
+    ) {
         teamActions?.forEach {
-            addActionToTeam(actionTime, it)
+            addActionToTeam(actionTime, it, substitutionActionType, actionTextFormatRes)
         }
     }
 
     private fun addActionToTeam(
         actionTime: String,
-        teamAction: TeamActionUiModel
+        teamAction: TeamActionUiModel,
+        substitutionActionType: Int,
+        actionTextFormatRes: Int
     ) {
-        val actionView = if (teamAction.actionType == ActionTypes.SUBSTITUTION.actionId)
+        val actionView = if (teamAction.actionType?.actionId == substitutionActionType)
             SubstitutionTeamActionView(
                 context,
             ).apply {
@@ -36,7 +42,7 @@ class TeamActionContainerView @JvmOverloads constructor(
                     teamAction.action.player2,
                     teamAction.teamType
                 )
-                setActionText(actionTime = actionTime)
+                setActionText(actionTextFormatRes, actionTime, teamAction.actionType)
             }
         else
             RegularTeamActionView(
@@ -45,12 +51,7 @@ class TeamActionContainerView @JvmOverloads constructor(
                 setPlayerInfo(
                     teamAction.action.player,
                 )
-                setActionInfo(
-                    actionTime = actionTime,
-                    goalType = teamAction.action.goalType,
-                    teamType = teamAction.teamType,
-                    actionType = teamAction.actionType,
-                )
+                setActionInfo(actionTextFormatRes, actionTime,teamAction.actionType , teamAction.teamType)
             }
 
         when (teamAction.teamType) {

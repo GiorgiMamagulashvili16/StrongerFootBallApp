@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.strongerfootballapp.R
 import com.example.strongerfootballapp.databinding.ActionsRecyclerItemBinding
+import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Summary
 import com.example.strongerfootballapp.domain.utils.ItemDiffUtil
 import com.example.strongerfootballapp.presentation.match_screen.adapter.helper.ActionAdapterHelper
@@ -33,12 +35,16 @@ class ActionsAdapter(
             with(binding) {
                 actionsContainer.submitTeamActions(
                     current.actionTime,
-                    helper.mapTeamAction(current.team1Action)
+                    helper.mapTeamAction(current.team1Action),
+                    ActionTypes.SUBSTITUTION.actionId,
+                    R.string.action_text
                 )
 
                 actionsContainer.submitTeamActions(
                     current.actionTime,
-                    helper.mapTeamAction(current.team2Action)
+                    helper.mapTeamAction(current.team2Action),
+                    ActionTypes.SUBSTITUTION.actionId,
+                    R.string.action_text
                 )
 
                 helper.getHalfScoreView(itemView.context, current.actionTime, summaries)?.let {

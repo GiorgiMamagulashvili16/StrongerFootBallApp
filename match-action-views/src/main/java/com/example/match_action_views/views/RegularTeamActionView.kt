@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.match_action_views.R
 import com.example.match_action_views.databinding.RegularActionBinding
 import com.example.match_action_views.extensions.shortenLastName
-import com.example.match_action_views.models.ActionTypes
+import com.example.match_action_views.models.ActionTypeUIModel
 import com.example.match_action_views.models.PlayerUiModel
 
 @SuppressLint("ViewConstructor")
@@ -18,22 +18,20 @@ class RegularTeamActionView(
     private val binding = RegularActionBinding.inflate(LayoutInflater.from(context), this)
 
     fun setActionInfo(
-        actionTextResource: Int = R.string.action_text,
+        actionTextResource: Int,
         actionTime: String,
-        actionType: Int,
-        goalType: Int?,
+        actionType: ActionTypeUIModel?,
         teamType: Int
     ) {
-        val mActionType = mapIntToActionType(actionType, goalType)
-        with(binding) {
-            mActionType?.let {
-                val actionText = context.getString(it.actionTextRes)
+        actionType?.let {
+            with(binding) {
+                val actionText = context.getString(actionType.actionTextRes)
                 actionTextTextView.text =
                     context.getString(actionTextResource).format(actionTime, actionText)
-                actionIconImageView.setImageResource(it.actionImageRes)
+                actionIconImageView.setImageResource(actionType.actionImageRes)
             }
+            if (teamType == SECOND_TEAM) rotateView()
         }
-        if (teamType == SECOND_TEAM) rotateView()
     }
 
     fun setPlayerInfo(
@@ -48,9 +46,6 @@ class RegularTeamActionView(
             root.layoutDirection = View.LAYOUT_DIRECTION_RTL
         }
     }
-
-    private fun mapIntToActionType(actionId: Int, goalType: Int?): ActionTypes? =
-        ActionTypes.values().find { it.actionId == actionId && it.goalType == goalType }
 
     companion object {
         private const val SECOND_TEAM = 2
