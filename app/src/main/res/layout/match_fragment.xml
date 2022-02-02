@@ -6,37 +6,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.match_screen.MatchFragment">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimens_dp_200"
+        android:src="@drawable/rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/overViewCardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/dimens_dp_0"
         android:layout_marginHorizontal="@dimen/dimens_dp_17"
-        android:layout_marginTop="@dimen/dimens_dp_86"
-        android:layout_marginBottom="@dimen/dimens_dp_75"
+        android:layout_marginTop="18dp"
         android:paddingHorizontal="@dimen/dimens_dp_17"
         app:cardCornerRadius="@dimen/dimens_dp_15"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/gameWeekTextView">
 
         <TextView
             android:id="@+id/eventDateAndStadiumName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimens_dp_12"
             android:textColor="@color/app_main_color"
             android:textSize="@dimen/dimens_sp_12"
             android:textStyle="normal"
-            tools:text="2 September 2018 Camp Nou Stadium"/>
+            tools:text="2 September 2018 Camp Nou Stadium" />
 
         <TextView
             android:id="@+id/matchScoreTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="51dp"
+            android:layout_marginTop="@dimen/dimens_dp_51"
             android:textColor="@color/black"
             android:textSize="@dimen/dimens_sp_25"
             android:textStyle="normal"
@@ -47,22 +56,40 @@
             android:layout_width="@dimen/dimens_dp_45"
             android:layout_height="@dimen/dimens_dp_40"
             android:layout_gravity="start"
-            android:layout_marginStart="@dimen/dimens_dp_53"
-            android:layout_marginTop="@dimen/dimens_dp_47" />
+            android:layout_marginStart="@dimen/dimens_dp_57"
+            android:layout_marginTop="@dimen/dimens_dp_45" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/teamOneStar"
+            android:layout_width="@dimen/dimens_dp_14"
+            android:layout_height="@dimen/dimens_dp_14"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/dimens_dp_31"
+            android:layout_marginTop="@dimen/dimens_dp_58"
+            android:background="@drawable/ic_star" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/teamTwoStar"
+            android:layout_width="@dimen/dimens_dp_14"
+            android:layout_height="@dimen/dimens_dp_14"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dimens_dp_58"
+            android:layout_marginEnd="@dimen/dimens_dp_31"
+            android:background="@drawable/ic_star" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/teamTwoLogoImageView"
             android:layout_width="@dimen/dimens_dp_40"
             android:layout_height="@dimen/dimens_dp_40"
             android:layout_gravity="end"
-            android:layout_marginTop="@dimen/dimens_dp_47"
-            android:layout_marginEnd="@dimen/dimens_dp_53" />
+            android:layout_marginTop="@dimen/dimens_dp_45"
+            android:layout_marginEnd="@dimen/dimens_dp_57" />
 
         <TextView
             android:id="@+id/teamOneNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimens_dp_47"
+            android:layout_marginStart="@dimen/dimens_dp_50"
             android:layout_marginTop="@dimen/dimens_dp_93"
             android:gravity="center"
             android:textSize="@dimen/dimens_dp_12"
@@ -72,8 +99,8 @@
             android:id="@+id/timeIndicatorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_dp_84"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimens_dp_84"
             android:textSize="@dimen/dimens_sp_12"
             tools:text="time" />
 
@@ -83,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="@dimen/dimens_dp_93"
-            android:layout_marginEnd="@dimen/dimens_dp_44"
+            android:layout_marginEnd="@dimen/dimens_dp_50"
             android:textSize="@dimen/dimens_sp_12"
             tools:text="TeamTwo" />
 
@@ -91,25 +118,25 @@
             android:id="@+id/matchEventsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_marginTop="@dimen/dimens_dp_234" />
+            android:layout_marginTop="@dimen/dimens_dp_212"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/overViewOptionsBackground"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimens_dp_35"
             android:layout_marginHorizontal="@dimen/dimens_dp_18"
-            android:layout_marginTop="@dimen/dimens_dp_123"
-            android:src="@drawable/small_screen"/>
+            android:layout_marginTop="@dimen/dimens_dp_120"
+            android:src="@drawable/small_screen" />
 
         <TextView
             android:id="@+id/statisticsOptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_dp_133"
             android:layout_gravity="center_horizontal"
-            android:text="@string/statistics"
+            android:layout_marginTop="@dimen/dimens_dp_131"
             android:gravity="center"
+            android:text="@string/statistics"
             android:textColor="@color/options_textview_color"
             android:textSize="@dimen/dimens_sp_12" />
 
@@ -117,56 +144,56 @@
             android:id="@+id/overViewOptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_dp_133"
             android:layout_marginStart="@dimen/dimens_dp_47"
+            android:layout_marginTop="@dimen/dimens_dp_131"
             android:layout_marginEnd="@dimen/dimens_dp_240"
             android:text="@string/overview"
             android:textColor="@color/app_main_color"
-            android:textSize="@dimen/dimens_sp_12"/>
+            android:textSize="@dimen/dimens_sp_12"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/lineupOptionTextView"
             android:layout_width="wrap_content"
-            android:layout_gravity="end"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimens_dp_133"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dimens_dp_131"
             android:layout_marginEnd="@dimen/dimens_dp_47"
-            android:textColor="@color/options_textview_color"
             android:text="@string/line_up"
-            android:textSize="@dimen/dimens_sp_12"
-            />
+            android:textColor="@color/options_textview_color"
+            android:textSize="@dimen/dimens_sp_12" />
 
         <TextView
             android:id="@+id/ballPossessionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dimens_dp_169"
-            android:text="@string/ball_possession"
+            android:layout_marginTop="@dimen/dimens_dp_167"
             android:maxLines="1"
+            android:text="@string/ball_possession"
             android:textColor="@color/indicator_color"
-            android:textSize="@dimen/dimens_sp_12"/>
+            android:textSize="@dimen/dimens_sp_12" />
 
         <TextView
             android:id="@+id/firstTeamBallPossessionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimens_dp_14"
-            android:layout_marginTop="@dimen/dimens_dp_169"
+            android:layout_marginTop="@dimen/dimens_dp_167"
             android:textColor="@color/indicator_color"
             android:textSize="@dimen/dimens_sp_12"
-            tools:text="70%"/>
+            tools:text="70%" />
 
         <TextView
             android:id="@+id/secondTeamBallPossessionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="@dimen/dimens_dp_169"
+            android:layout_marginTop="@dimen/dimens_dp_167"
             android:layout_marginEnd="@dimen/dimens_dp_14"
             android:textColor="@color/indicator_color"
             android:textSize="@dimen/dimens_sp_12"
-            tools:text="30%"/>
+            tools:text="30%" />
 
         <ProgressBar
             android:id="@+id/ballPossessionProgressBar"
@@ -174,23 +201,11 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimens_dp_5"
             android:layout_marginHorizontal="@dimen/dimens_dp_35"
-            android:layout_marginTop="@dimen/dimens_dp_195"
+            android:layout_marginTop="@dimen/dimens_dp_193"
             android:foregroundGravity="top"
-            android:progressDrawable="@drawable/progressbar_style"
-            />
+            android:progressDrawable="@drawable/progressbar_style" />
 
     </androidx.cardview.widget.CardView>
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/topBackGround"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimens_dp_200"
-        android:src="@drawable/rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
 
     <TextView
         android:id="@+id/matchPreviewTextView"
@@ -220,22 +235,21 @@
         android:id="@+id/notificationsImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimens_dp_25"
-        android:layout_marginEnd="@dimen/dimens_dp_15"
-        android:src="@drawable/notifications_icon"
+        android:layout_marginTop="@dimen/dimens_dp_31"
+        android:layout_marginEnd="@dimen/dimens_dp_19"
+        android:src="@drawable/ic_path_3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/backArrowImageView"
         android:layout_width="@dimen/dimens_dp_31"
         android:layout_height="@dimen/dimens_dp_25"
-        android:layout_marginTop="@dimen/dimens_dp_25"
-        android:layout_marginStart="@dimen/dimens_dp_15"
+        android:layout_marginStart="@dimen/dimens_dp_19"
+        android:layout_marginTop="@dimen/dimens_dp_31"
         android:src="@drawable/back_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

@@ -22,9 +22,6 @@ class MatchViewModel(
     private val _matchScreenStateFlow = MutableStateFlow<MatchScreenStates>(MatchScreenStates.Idle)
     val matchScreenStateFlow: StateFlow<MatchScreenStates> = _matchScreenStateFlow.asStateFlow()
 
-    private val _matchDateAndStadiumInfoFlow = MutableStateFlow<String?>(null)
-    val matchDateAndStadiumInfoFlow: StateFlow<String?> = _matchDateAndStadiumInfoFlow
-
     private val _matchTimeFlow = MutableStateFlow<String?>(null)
     val matchTimeFlow: StateFlow<String?> = _matchTimeFlow
 
@@ -41,10 +38,6 @@ class MatchViewModel(
                     with(matchResponse.data) {
                         _matchScreenStateFlow.value =
                             MatchScreenStates.SuccessLoading(this)
-                        setMatchDateAndStadiumInfo(
-                            match.matchDate,
-                            match.stadiumAdress
-                        )
                         setMatchTime(match.matchTime)
                         setTeamBallPossessions(match.team1.ballPosition, match.team2.ballPosition)
                     }
@@ -57,19 +50,8 @@ class MatchViewModel(
         }
     }
 
-    private fun setMatchDateAndStadiumInfo(matchDate: Long, stadiumAddress: String) =
-        viewModelScope.launch {
-            _matchDateAndStadiumInfoFlow.emit(
-                resourcesProvider.getString(
-                    R.string.date_and_stadium_name,
-                    matchDate.toFormattedDate(),
-                    stadiumAddress
-                )
-            )
-        }
-
     private fun setMatchTime(matchTime: Double) = viewModelScope.launch {
-        _matchTimeFlow.emit(resourcesProvider.getString(R.string.time, matchTime))
+        _matchTimeFlow.emit("${matchTime.toInt()}'")
     }
 
     private fun setTeamBallPossessions(firstTeamPossession: Int, secondTeamPossession: Int) =
