@@ -5,12 +5,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.match_action_views.R
 import com.example.match_action_views.databinding.SubstitutionActionBinding
 import com.example.match_action_views.extensions.loadImage
 import com.example.match_action_views.extensions.shortenLastName
 import com.example.match_action_views.models.ActionTypeUIModel
-import com.example.match_action_views.models.PlayerUiModel
+import com.example.match_action_views.models.PlayerUIModel
 
 
 @SuppressLint("ViewConstructor")
@@ -18,7 +17,7 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
     private val binding: SubstitutionActionBinding =
         SubstitutionActionBinding.inflate(LayoutInflater.from(context), this)
 
-    fun setPlayerInfo(player1: PlayerUiModel?, player2: PlayerUiModel?, teamType: Int) {
+    fun setPlayerInfo(player1: PlayerUIModel?, player2: PlayerUIModel?, teamType: Int) {
         with(binding) {
             firstPlayerImage.loadImage(player1?.playerImage)
             secondPlayerImage.loadImage(player2?.playerImage)

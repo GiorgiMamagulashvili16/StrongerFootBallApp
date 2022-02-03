@@ -4,9 +4,9 @@ import com.example.strongerfootballapp.data.mappers.*
 import com.example.strongerfootballapp.data.network.interceptors.NetworkConnectionInterceptor
 import com.example.strongerfootballapp.data.repository.FootballRepositoryImpl
 import com.example.strongerfootballapp.domain.mappers.ActionTypeUIModelMapper
-import com.example.strongerfootballapp.domain.mappers.ActionUiModelMapper
-import com.example.strongerfootballapp.domain.mappers.PlayerUiModelMapper
-import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
+import com.example.strongerfootballapp.domain.mappers.ActionUIModelMapper
+import com.example.strongerfootballapp.domain.mappers.PlayerUIModelMapper
+import com.example.strongerfootballapp.domain.mappers.TeamActionUIModelMapper
 import com.example.strongerfootballapp.domain.repository.FootballRepository
 import com.example.strongerfootballapp.domain.use_case.count_goal.CountGoalUseCaseImpl
 import com.example.strongerfootballapp.domain.use_case.count_goal.CountGoalsUseCase
@@ -48,10 +48,10 @@ val mappersModule = module {
     single { MatchOverviewMapper(get(), get()) }
     single { ActionMapper(get()) }
     single { MatchMapper(get()) }
-    single { PlayerUiModelMapper() }
-    single { ActionUiModelMapper(get()) }
+    single { PlayerUIModelMapper() }
+    single { ActionUIModelMapper(get()) }
     single { ActionTypeUIModelMapper() }
-    single { TeamActionUiModelMapper(get(), get()) }
+    single { TeamActionUIModelMapper(get(), get()) }
 }
 val resourcesModule = module {
     single { ResourcesProvider(androidContext()) }

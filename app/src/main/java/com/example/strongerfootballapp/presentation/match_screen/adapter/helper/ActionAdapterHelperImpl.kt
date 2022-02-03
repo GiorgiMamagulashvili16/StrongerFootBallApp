@@ -3,17 +3,17 @@ package com.example.strongerfootballapp.presentation.match_screen.adapter.helper
 import android.content.Context
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.strongerfootballapp.domain.model.Score
-import com.example.match_action_views.models.TeamActionUiModel
+import com.example.match_action_views.models.TeamActionUIModel
 import com.example.match_action_views.views.HalfScoreView
 import com.example.match_action_views.views.RegularTeamActionView
 import com.example.match_action_views.views.SubstitutionTeamActionView
-import com.example.strongerfootballapp.domain.mappers.TeamActionUiModelMapper
+import com.example.strongerfootballapp.domain.mappers.TeamActionUIModelMapper
 import com.example.strongerfootballapp.domain.model.ActionTypes
 import com.example.strongerfootballapp.domain.model.Summary
 import com.example.strongerfootballapp.domain.model.TeamAction
 
 class ActionAdapterHelperImpl(
-    private val teamActionUiModelMapper: TeamActionUiModelMapper,
+    private val teamActionUIModelMapper: TeamActionUIModelMapper,
 ) : ActionAdapterHelper {
 
     private var firstHalfScore: Score? = null
@@ -53,15 +53,15 @@ class ActionAdapterHelperImpl(
         val view = if (!matchHalf.hasHalfStarted(actionTimeValue)) {
             val score = matchHalf.determineCorrespondingScore(firstHalfScore, secondHalfScore)
             HalfScoreView(context).apply {
-                setScore(score.toString())
+                setScore(score!!.getFormattedScore())
                 setHalfIndicator(context.getString(matchHalf.getHalfIndicator()))
             }
         } else null
         return view
     }
 
-    override fun mapTeamAction(actions: List<TeamAction>?): List<TeamActionUiModel>? {
-        return teamActionUiModelMapper.mapToNullableList(actions)
+    override fun mapTeamAction(actions: List<TeamAction>?): List<TeamActionUIModel>? {
+        return teamActionUIModelMapper.mapToNullableList(actions)
     }
 
 }

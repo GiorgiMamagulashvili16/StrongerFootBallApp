@@ -1,8 +1,8 @@
 package com.example.strongerfootballapp.domain.model
 
-data class Score(private var firstTeamScore: Int = 0, private var secondTeamScore: Int = 0){
+data class Score(private var firstTeamScore: Int = 0, private var secondTeamScore: Int = 0) {
 
-    override fun toString(): String {
+    fun getFormattedScore(): String {
         return SCORE_FORMAT.format(firstTeamScore, secondTeamScore)
     }
 
@@ -10,16 +10,16 @@ data class Score(private var firstTeamScore: Int = 0, private var secondTeamScor
 
     fun increaseSecondTeamScore() = secondTeamScore++
 
-    fun getFirstTeamScore() = firstTeamScore
+    private fun getFirstTeamScore() = firstTeamScore
 
-    fun getSecondTeamScore() = secondTeamScore
+    private fun getSecondTeamScore() = secondTeamScore
 
-    operator fun plus(other: Score){
+    operator fun plus(other: Score) {
         firstTeamScore += other.getFirstTeamScore()
         secondTeamScore += other.getSecondTeamScore()
     }
 
-    companion object{
+    companion object {
         private const val SCORE_FORMAT = "%d : %d"
     }
 }

@@ -110,7 +110,7 @@ class MatchFragment : BaseFragment<MatchFragmentBinding, MatchViewModel>() {
         firstTeamBallPossession: Int,
     ) {
         with(binding) {
-            matchScoreTextView.text = score.toString()
+            matchScoreTextView.text = score.getFormattedScore()
             ballPossessionProgressBar.progress = firstTeamBallPossession
         }
     }

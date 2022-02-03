@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.match_action_views.databinding.TeamActionsContainerBinding
-import com.example.match_action_views.models.TeamActionUiModel
+import com.example.match_action_views.models.TeamActionUIModel
 
 class TeamActionContainerView @JvmOverloads constructor(
     context: Context,
@@ -18,7 +18,7 @@ class TeamActionContainerView @JvmOverloads constructor(
 
     fun submitTeamActions(
         actionTime: String,
-        teamActions: List<TeamActionUiModel>?,
+        teamActions: List<TeamActionUIModel>?,
         substitutionActionType: Int,
         actionTextFormatRes: Int
     ) {
@@ -29,7 +29,7 @@ class TeamActionContainerView @JvmOverloads constructor(
 
     private fun addActionToTeam(
         actionTime: String,
-        teamAction: TeamActionUiModel,
+        teamAction: TeamActionUIModel,
         substitutionActionType: Int,
         actionTextFormatRes: Int
     ) {

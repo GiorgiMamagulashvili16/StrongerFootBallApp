@@ -5,11 +5,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.match_action_views.R
 import com.example.match_action_views.databinding.RegularActionBinding
 import com.example.match_action_views.extensions.shortenLastName
 import com.example.match_action_views.models.ActionTypeUIModel
-import com.example.match_action_views.models.PlayerUiModel
+import com.example.match_action_views.models.PlayerUIModel
 
 @SuppressLint("ViewConstructor")
 class RegularTeamActionView(
@@ -35,9 +34,9 @@ class RegularTeamActionView(
     }
 
     fun setPlayerInfo(
-        playerUiModel: PlayerUiModel?,
+        playerUIModel: PlayerUIModel?,
     ) {
-        binding.playerNameTextView.text = playerUiModel?.playerName?.shortenLastName()
+        binding.playerNameTextView.text = playerUIModel?.playerName?.shortenLastName()
     }
 
 
