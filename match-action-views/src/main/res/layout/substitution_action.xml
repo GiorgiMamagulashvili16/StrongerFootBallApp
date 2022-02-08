@@ -74,14 +74,8 @@
         app:layout_constraintTop_toBottomOf="@+id/playerNameTextView"
         tools:text="26' ragaca" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/textGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="playerNameTextView, substitutedPlayerNameTextView, actionTextTextView" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/substitutionGreenArrowImageView"
         android:layout_width="@dimen/dimen_dp_11"
         android:layout_height="@dimen/dimen_dp_11"
         android:layout_marginEnd="@dimen/dimen_dp_11"
@@ -91,7 +85,7 @@
         app:srcCompat="@drawable/ic_up_arrow" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/substitutionRedArrowImageView"
         android:layout_width="@dimen/dimen_dp_11"
         android:layout_height="@dimen/dimen_dp_11"
         android:layout_marginEnd="@dimen/dimen_dp_11"
