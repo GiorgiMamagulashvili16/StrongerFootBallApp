@@ -10,12 +10,22 @@ import com.example.match_action_views.extensions.loadImage
 import com.example.match_action_views.extensions.shortenLastName
 import com.example.match_action_views.models.ActionTypeUIModel
 import com.example.match_action_views.models.PlayerUIModel
+import com.example.match_action_views.utils.Constants.MULTIPLIER_FOR_DPI
+import com.example.match_action_views.utils.Constants.PADDING_0_DP
+import com.example.match_action_views.utils.Constants.PADDING_10_DP
+import com.example.match_action_views.utils.Constants.SECOND_TEAM
 
 
 @SuppressLint("ViewConstructor")
 class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
     private val binding: SubstitutionActionBinding =
         SubstitutionActionBinding.inflate(LayoutInflater.from(context), this)
+
+    init {
+        val scale = resources.displayMetrics.density
+        val paddingTopAndBottom = (PADDING_10_DP * scale + MULTIPLIER_FOR_DPI).toInt()
+        binding.root.setPadding(PADDING_0_DP,paddingTopAndBottom,PADDING_0_DP,paddingTopAndBottom)
+    }
 
     fun setPlayerInfo(player1: PlayerUIModel?, player2: PlayerUIModel?, teamType: Int) {
         with(binding) {
@@ -40,7 +50,5 @@ class SubstitutionTeamActionView(context: Context) : ConstraintLayout(context) {
         }
     }
 
-    companion object {
-        private const val SECOND_TEAM = 2
-    }
+
 }
